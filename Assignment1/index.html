@@ -132,7 +132,19 @@
           <td>June 2022</td>
           <td>90 pieces</td>
         </tr>
+        <tr>
+          <td><input type="text" placeholder="URL (JPEG or PNG)" name="imageURL" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Item" name="name" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Origin" name="origin" id="addTopSellingItem"></td>
+          <td><input type="datetime"  name="dueDate" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Amount" name="amount" id="addTopSellingItem"></td>
+        </tr>
       </table>
+
+      <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post">
+        <input type="submit" name="submitNewItem" id="addTopSellingItem">
+      </form>
+
     </section>
 
     <section>
@@ -143,10 +155,7 @@
       </address>
 
     </section>
-
   </main>
-
-  <form action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post">
 
     <footer>
       <p>&copy; 2020 Web Shop</p>
