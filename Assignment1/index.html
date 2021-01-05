@@ -12,7 +12,7 @@
     <h1>e&#8209buy&#8482</h1>
     <h2>Everything You Need In One Place</h2>
 
-    <form action="e-buy.com/search" method="get">
+    <form action="e-buy.com/search">
       <select name="searchItem">
         <option value="fruitsVegetables">Fruits & Vegetables</option>
         <option value="beverages">Beverages</option>
@@ -137,16 +137,16 @@
           <td>90 pieces</td>
         </tr>
         <tr>
-          <td><input type="text" placeholder="URL (JPEG or PNG)" name="imageURL" id="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Item" name="name" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Item" name="product" id="addTopSellingItem"></td>
           <td><input type="text" placeholder="Origin" name="origin" id="addTopSellingItem"></td>
-          <td><input type="date" value="2020-01-01" name="bestBeforeDate" id="addTopSellingItem"></td>
+          <td><input type="date" value="2020-01-01" name="best_before_date" id="addTopSellingItem"></td>
           <td><input type="text" placeholder="Amount" name="amount" id="addTopSellingItem"></td>
         </tr>
       </table>
 
       <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post">
-        <input type="submit" name="submitNewItem" id="addTopSellingItem">
+        <input type="submit" id="addTopSellingItem">
       </form>
 
     </section>
