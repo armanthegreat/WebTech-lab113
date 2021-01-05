@@ -27,8 +27,12 @@
       <input type="submit" value="Search" name="submitKeyword">
     </form>
 
-    <img src="https://images.pexels.com/photos/3794178/pexels-photo-3794178.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-    alt="shop" width="500">
+    <figure>
+      <img
+        src="https://images.pexels.com/photos/3794178/pexels-photo-3794178.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        alt="shop" width="500">
+      <figcaption>Image from pexels.com</figcaption>
+    </figure>
 
     <nav>
       <a href="index.html">Home</a>
@@ -43,10 +47,10 @@
   <main>
 
     <h3>Welcome to <strong>Supermarket Web Shop</strong></h3>
-    <!-- Ask whether table is better suited instead of unordered list -->
+    
     <section>
       <p>Explore popular products by categories:</p>
-      <ol type="I" >
+      <ol type="I">
         <li>Beverages
           <ul>
             <li><a href="index.html">Coffe & Tea</a></li>
@@ -136,7 +140,7 @@
           <td><input type="text" placeholder="URL (JPEG or PNG)" name="imageURL" id="addTopSellingItem"></td>
           <td><input type="text" placeholder="Item" name="name" id="addTopSellingItem"></td>
           <td><input type="text" placeholder="Origin" name="origin" id="addTopSellingItem"></td>
-          <td><input type="datetime"  name="dueDate" id="addTopSellingItem"></td>
+          <td><input type="date" value="2020-01-01" name="bestBeforeDate" id="addTopSellingItem"></td>
           <td><input type="text" placeholder="Amount" name="amount" id="addTopSellingItem"></td>
         </tr>
       </table>
@@ -148,18 +152,23 @@
     </section>
 
     <section>
+
+    </section>
+
+    <section>
       <address>
         <h3>Contact Us</h3>
         <p>Email: <a href="mailto:shopping@online.com">shopping@online.com</a><br>
-           Phone: <a href="tel:000-111-0011">000-111-0011</a></p>
+          Phone: <a href="tel:000-111-0011">000-111-0011</a></p>
       </address>
-
     </section>
+    
   </main>
 
-    <footer>
-      <p>&copy; 2020 Web Shop</p>
-    </footer>
+  <footer>
+    <p>&copy; 2020 Web Shop</p>
+  </footer>
+  
 </body>
 
 </html>
