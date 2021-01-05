@@ -137,16 +137,16 @@
           <td>90 pieces</td>
         </tr>
         <tr>
-          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" id="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Item" name="product" id="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Origin" name="origin" id="addTopSellingItem"></td>
-          <td><input type="date" value="2020-01-01" name="best_before_date" id="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Amount" name="amount" id="addTopSellingItem"></td>
+          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" form="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Item" name="product" form="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Origin" name="origin" form="addTopSellingItem"></td>
+          <td><input type="date" value="2020-01-01" name="best_before_date" form="addTopSellingItem"></td>
+          <td><input type="text" placeholder="Amount" name="amount" form="addTopSellingItem"></td>
         </tr>
       </table>
 
       <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post">
-        <input type="submit" id="addTopSellingItem">
+        <input type="submit" form="addTopSellingItem">
       </form>
 
     </section>
