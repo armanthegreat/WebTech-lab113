@@ -1,10 +1,14 @@
 :root {
     /****  Colors generated from colorhunt.co ****/
     --main-bg-color: #fcf8ec;
-    --partial-text-color: #456268
+    --partial-text-color: #456268;
+    --partial-bg-color: #d0e8f2;
+    --additional-color: #79a3b1;
 }
 
 * {
+    padding: 0;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     color: var(--partial-text-color);
     background-color: #e8eae6;
