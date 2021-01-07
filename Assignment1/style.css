@@ -9,26 +9,42 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
     color: var(--partial-text-color);
     background-color: #e8eae6;
-    max-width: 100em;
     margin: auto;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    height: 0.8em;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20em;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 0.5em;
+    margin: 0 1em;
 }
 
 #title {
     font-family: 'Montserrat', sans-serif;
     font-size: 5em;
-    text-align: center;
+    text-align: left;
 }
 
 #title span {
     font-size: 0.7em;
- 
 }
 
 #subtitle {
-    text-align: center;
+    text-align: left;
 }
 
 #search {
