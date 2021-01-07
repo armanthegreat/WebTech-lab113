@@ -1,0 +1,40 @@
+:root {
+    /****  Colors generated from colorhunt.co ****/
+    --main-bg-color: #fcf8ec;
+    --partial-text-color: #456268
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    color: var(--partial-text-color);
+    background-color: #e8eae6;
+    max-width: 100em;
+    margin: auto;
+}
+
+#title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5em;
+    text-align: center;
+}
+
+#title span {
+    font-size: 0.7em;
+ 
+}
+
+#subtitle {
+    text-align: center;
+}
+
+#search {
+
+}
+
+h2 {
+    font-family: 'Lato', sans-serif;
+}
+
+table {
+
+}

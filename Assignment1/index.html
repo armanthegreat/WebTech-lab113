@@ -4,16 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <title>e&#8209;buy</title>
-</head>
 
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&family=Poppins:wght@300&display=swap"
+    rel="stylesheet">
+
+</head>
 <body>
 
   <header>
 
-    <h1>e&#8209;buy&#8482;</h1>
-    <h2>Everything You Need In One Place</h2>
+    <h1 id="title" >e&#8209;buy <span>&#8482;</span></h1>
+    <h2 id="subtitle">Everything You Need In One Place</h2>
 
-    <form action="e-buy.com/search">  <!-- Just for stylistic reasons, no functionality -->
+    <form id="search" action="e-buy.com/search">
+      <!-- Just for stylistic reasons, no functionality -->
       <select name="searchItem">
         <option value="fruitsVegetables">Fruits & Vegetables</option>
         <option value="beverages">Beverages</option>
@@ -30,7 +37,7 @@
 
     <figure>
       <img
-        src="https://images.pexels.com/photos/3794178/pexels-photo-3794178.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        src="https://images.pexels.com/photos/4050334/pexels-photo-4050334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         alt="shop" width="500">
       <figcaption>Image from pexels.com</figcaption>
     </figure>
@@ -176,15 +183,24 @@
       </table>
     </section>
 
-    <section>
+    <section id="about-us">
       <h3>About Us</h3>
       <p> <abbr title="dummyText">Lorem ipsum</abbr> dolor sit, amet consectetur adipisicing elit. Nemo, placeat. </p>
+      <h4>Employees</h4>
+      <dl>
+        <dt>Arman</dt>
+        <dd></dd>
+
+        <dt>Osman</dt>
+        <dd>Works as a part-time store associate, deals with </dd>
+
+      </dl>
     </section>
 
     <section>
-        <h3>Contact Us</h3>
-        <p>Email: <a href="mailto:shopping@online.com">shopping@online.com</a><br>
-          Phone: <a href="tel:000-111-0011">000-111-0011</a></p>
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:shopping@online.com">shopping@online.com</a><br>
+        Phone: <a href="tel:000-111-0011">000-111-0011</a></p>
     </section>
 
   </main>
