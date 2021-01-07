@@ -1,59 +1,96 @@
 :root {
-    /****  Colors generated from colorhunt.co ****/
+     /* Colors generated from colorhunt.co  */
     --main-bg-color: #fcf8ec;
     --partial-text-color: #456268;
     --partial-bg-color: #d0e8f2;
     --additional-color: #79a3b1;
 }
 
-* {
+ body,html{
     padding: 0;
     margin: 0;
     color: var(--partial-text-color);
     background-color: #e8eae6;
-    margin: auto;
-}
-
-body {
     font-family: 'Poppins', sans-serif;
 }
 
-nav {
-    height: 0.8em;
-}
-
-nav ul {
-    float: right;
-    margin-right: 20em;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 0.5em;
-    margin: 0 1em;
+header{
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    height: 90px;
+    background-color: #0c7d85;
 }
 
 #title {
+    color: #f0c330;
     font-family: 'Montserrat', sans-serif;
-    font-size: 5em;
+    font-size: 3em;
     text-align: left;
+    position: absolute;
+    padding: 0;
+    float: left;
+    margin-left: 50px;
+    margin-top: 0px;
 }
 
 #title span {
     font-size: 0.7em;
+    color: #ffffff;
 }
 
 #subtitle {
+    color:white;
+    font-size: small;
     text-align: left;
+    margin-top: 60px;
+    float: left;
+    margin-left:70px;
 }
 
-#search {
+nav ul {
+    width: auto;
+    float: right;
+    margin-top: 8px;
+}
 
+nav ul li {
+    display: inline-block;
+    padding: 15px 27px;
+}
+
+nav ul li a{
+    text-align: center;
+    /* font-size: 2vw; */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.3vw;
+}
+
+nav ul li a:hover{
+    color: #f0c330;
+    transition: 0.5s;
 }
 
 h2 {
     font-family: 'Lato', sans-serif;
 }
+
+#search {
+        margin-top: 10px;
+        
+        padding: 5px;
+
+}
+
+figure{
+    margin-top: 20px;
+    margin-left: 50px;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 0;
+}
+
 
 table {
 
