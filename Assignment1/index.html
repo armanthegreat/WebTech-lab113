@@ -21,7 +21,7 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#product-categories"> Explore Products</a></li>
+        <li><a href="#products-categories"> Explore Products</a></li>
         <li><a href="#top-selling-items">Top selling items</a></li>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -35,34 +35,34 @@
   <main>
 
     <section id="search-bar">
-    <form id="search-product" action="e-buy.com/search">
-      <select name="searchItem">
-        <option value="fruitsVegetables">Fruits & Vegetables</option>
-        <option value="beverages">Beverages</option>
-        <option value="breadBakery">Bread & Bakery</option>
-        <option value="meat">Meat</option>
-        <option value="diary">Diary</option>
-        <option value="personalCare">Personal Care</option>
-        <option value="electronics">Consumer Electronics</option>
-        <option value="other">Other</option>
-      </select>
-    </form>
-    <input type="text" form="search-product" placeholder="Search for products" required>
-    <input type="submit" form="search-product" value="Search" name="submitKeyword">
-  </section>
+      <form id="search-product" action="e-buy.com/search">
+        <select name="searchItem">
+          <option value="fruitsVegetables">Fruits & Vegetables</option>
+          <option value="beverages">Beverages</option>
+          <option value="breadBakery">Bread & Bakery</option>
+          <option value="meat">Meat</option>
+          <option value="diary">Diary</option>
+          <option value="personalCare">Personal Care</option>
+          <option value="electronics">Consumer Electronics</option>
+          <option value="other">Other</option>
+        </select>
+      </form>
+      <input type="text" form="search-product" placeholder="Search for products" required>
+      <input type="submit" form="search-product" value="Search" name="submitKeyword">
+    </section>
 
     <figure>
       <img
         src="https://images.pexels.com/photos/4050334/pexels-photo-4050334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt="shop" id="" >
+        alt="shop" id="brand-image">
       <figcaption>Image from pexels.com</figcaption>
     </figure>
 
     <h3>Welcome to <strong>Supermarket Web Shop</strong></h3>
 
-    <p>Explore <em>popular products</em> by categories:</p>
+    <section id="products-categories">
 
-    <section id="product-categories">
+      <p>Explore <em>popular products</em> by categories:</p>
 
       <ul>
         <li>Beverages
@@ -121,13 +121,13 @@
       <table>
         <caption>Top selling items</caption>
         <thead>
-            <tr>
-              <th></th>
-              <th>Product</th>
-              <th>Origin</th>
-              <th>Expiration date</th>
-              <th>Quantity</th>
-            </tr>
+          <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Origin</th>
+            <th>Expiration date</th>
+            <th>Quantity</th>
+          </tr>
         </thead>
         <tr>
           <td><img
@@ -216,7 +216,7 @@
       <h3>Contact Us</h3>
       <p>Email: <a href="mailto:shopping@online.com">shopping@online.com</a><br>
         Phone: <a href="tel:000-111-0011">000-111-0011</a></p>
-        
+
     </section>
 
   </main>
