@@ -16,7 +16,7 @@
 <body>
 
   <header>
-    <h1 id="title"> <a href="index.html">e&#8209;buy <span>&#8482;</a></span></h1>
+    <h1 id="logo"> <a href="index.html">e&#8209;buy <span>&#8482;</a></span></h1>
 
     <nav>
       <ul>
@@ -28,13 +28,13 @@
       </ul>
     </nav>
 
-    <h2 id="subtitle">Everything You Need In One Place</h2>
+    <h2 id="slogan">Everything You Need In One Place</h2>
 
   </header>
 
   <main>
 
-    <section id="search-bar">
+    <section class="search-product">
       <form id="search-product" action="e-buy.com/search">
         <select name="searchItem">
           <option value="fruitsVegetables">Fruits & Vegetables</option>
@@ -51,12 +51,6 @@
       <input type="submit" form="search-product" value="Search" name="submitKeyword">
     </section>
 
-    <figure>
-      <img
-        src="https://images.pexels.com/photos/4050334/pexels-photo-4050334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt="shop" id="brand-image">
-      <figcaption>Image from pexels.com</figcaption>
-    </figure>
 
     <h3>Welcome to <strong>Supermarket Web Shop</strong></h3>
 
@@ -118,7 +112,7 @@
 
     <section id="top-selling-items">
 
-      <table>
+      <table class="top-selling-items-content">
         <caption>Top selling items</caption>
         <thead>
           <tr>
@@ -158,12 +152,11 @@
       <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
       <input type="submit" form="addTopSellingItem">
 
-
     </section>
 
     <section>
 
-      <table>
+      <table class="recently_added_products">
         <caption>Recently Added Products</caption>
         <tr>
           <th>Product</th>
@@ -192,11 +185,28 @@
     <section id="about-us">
 
       <h3>About Us</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti minima dicta incidunt, magni ratione
-        consequuntur fugit maxime voluptatibus cum, iure neque repellat provident culpa ipsum tempore quisquam qui
-        voluptas rerum quasi sit, facere suscipit delectus deserunt! Est doloribus aperiam, voluptatibus earum commodi
-        nostrum libero cumque nesciunt molestiae ipsum natus ex repellat sunt, nemo veritatis velit nobis amet omnis.
-        Excepturi, minus?</p>
+
+      <figure>
+        <img
+          src="https://images.pexels.com/photos/4968386/pexels-photo-4968386.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4968386.jpg&fm=jpg"
+          alt="" id="">
+        <figcaption>Image from pexels.com</figcaption>
+      </figure>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores sequi, tempore laboriosam quas placeat soluta
+        delectus et suscipit neque dignissimos eligendi? Non, omnis aperiam in tempore placeat ducimus quo. Sint
+        voluptas voluptatum sequi atque nisi. Fugit quos quaerat, tempore iusto autem rem quae quia ducimus iste minus
+        quisquam itaque at beatae nostrum, magnam id aspernatur sapiente odit placeat aperiam exercitationem illo
+        delectus soluta. Aliquam sequi expedita amet assumenda. Cupiditate tempore ducimus, ullam aliquid repudiandae
+        molestiae explicabo velit aliquam, nemo eligendi deleniti ad. Modi harum cum qui ducimus! Commodi, possimus
+        ducimus enim optio dicta quisquam facilis placeat. Possimus repudiandae hic laborum?</p>
+
+        <h4>Our priorities</h4>
+        <ol class="priorities_list">
+          <li>Fresh products</ul>
+          <li>Quick delivery</ul>
+          <li>Affordable prices</li>
+        </ol>
 
       <h4>Employees</h4>
       <dl>
