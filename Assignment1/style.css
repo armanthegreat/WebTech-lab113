@@ -1,37 +1,37 @@
 :root {
      /* Colors generated from colorhunt.co  */
     --main-bg-color: #fcf8ec;
+    --subheading-color: #f0c330;
     --partial-text-color: #456268;
-    --partial-bg-color: #d0e8f2;
+    --header-bg-color: #0c7d85;;
     --additional-color: #79a3b1;
 }
 
- body,html{
+ * {
     padding: 0;
     margin: 0;
-    color: var(--partial-text-color);
-    background-color: #e8eae6;
     font-family: 'Poppins', sans-serif;
 }
 
 header{
-    /* display: flex;
-    flex-direction: row; */
     width: 100%;
     height: 90px;
-    background-color: #0c7d85;
+    background-color: var(--header-bg-color);
 }
 
 #title {
-    color: #f0c330;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3em;
-    text-align: left;
     position: absolute;
     padding: 0;
     float: left;
     margin-left: 50px;
     margin-top: 0px;
+}
+
+#title a {
+    text-decoration: none;
+    color: var(--subheading-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
 }
 
 #title span {
@@ -51,8 +51,8 @@ header{
 nav ul {
     width: auto;
     float: right;
-    margin-top: 8px;
-}
+    margin-top: 15px;
+} 
 
 nav ul li {
     display: inline-block;
@@ -61,10 +61,10 @@ nav ul li {
 
 nav ul li a{
     text-align: center;
-    /* font-size: 2vw; */
+    font-size: 2vw;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.3vw;
+    font-size: 1.3em;
 }
 
 nav ul li a:hover{
@@ -72,15 +72,23 @@ nav ul li a:hover{
     transition: 0.5s;
 }
 
-h2 {
-    font-family: 'Lato', sans-serif;
+#search-bar {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 2;
 }
 
-#search {
-        margin-top: 10px;
-        
-        padding: 5px;
+#search-bar input[type="text"] {
+    flex-grow: ;
+}
 
+h2 {
+    font-family: 'Lato', sans-serif;
 }
 
 figure{
@@ -91,7 +99,32 @@ figure{
     margin-left: 0;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-table {
+#top-selling-itmes {
+    justify-content: center;
+}
 
+#top-selling-items table {
+    border: 0;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+#top-selling-items table thead {
+    background-color: var(--header-bg-color);
+    color: white;
+}
+
+#top-selling-items table th, td {
+    padding: 12px 15px
+}
+
+#top-selling-items table caption {
+    font-size: 3em;
 }
