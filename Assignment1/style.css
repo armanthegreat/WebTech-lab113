@@ -234,16 +234,17 @@ footer{
     /* width: 100%; */
     height: auto;
     padding: 50px 100px;
-    background-color: #111;
+    background-color: var(--header-bg-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 footer .container{
     display: flex;
-    justify-content: space-evenly;    
+    justify-content: space-between;    
     flex-wrap: wrap;
     flex-direction: row;
+    /* border: solid; */
 }
 
 footer .container .Employees{
@@ -264,17 +265,19 @@ footer .container h2:before{
     left: 0;
     width: 50px;
     height: 2px;
-    background: #f00;
+    background:#f0c330;;
 }
 footer dl{
-    color:#999 ;
+    color:white ;
 }
 footer #emp1:hover{
-    color:white ;
+    color: #f0c330;
+    transition: 0.5s;
 }
 
 footer #emp2:hover{
-    color:white ;
+    color: #f0c330;
+    transition: 0.5s;
 }
 
 footer dl dd{
@@ -289,13 +292,13 @@ footer dl dd{
     list-style: none;
 }
 .quicklinks ul li a{
-    color: #999 ;
+    color: white ;
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
 .quicklinks ul li a:hover{
-    color: #ffffff;
+    color: #f0c330;
 }
 .contact{
     /* padding-left: 5%; */
@@ -316,22 +319,22 @@ footer dl dd{
     margin-right:10px ;
 }
 .contact .info li span{
-    color: #999;
+    color: white;
 }
 .contact .info li span{
-    color: #999;
+    color: white;
 }
 .contact .info li a{
-    color: #999;
+    color:white;
     text-decoration: none;
 
 }
 .contact .info li a:hover{
-    color: white;
+    color: #f0c330;
 }
 .copyRight{
     /* width: 100%; */
-    background: #181818;
+    background-color: var(--subheader-color);
     padding: 8px 100px;
     text-align: center;
     color: #999;
