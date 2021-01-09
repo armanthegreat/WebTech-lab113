@@ -228,3 +228,111 @@ main {
 #about-us figure img {
     height: 20em;
 }
+
+footer{
+    position: relative;
+    /* width: 100%; */
+    height: auto;
+    padding: 50px 100px;
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+footer .container{
+    display: flex;
+    justify-content: space-evenly;    
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .container .Employees{
+    width: 40%;
+    /* border: solid; */
+}
+footer .container h2{
+    position: relative;
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+footer .container h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+footer dl{
+    color:#999 ;
+}
+footer #emp1:hover{
+    color:white ;
+}
+
+footer #emp2:hover{
+    color:white ;
+}
+
+footer dl dd{
+    font-size: 14px;
+}
+.quicklinks{
+    position: relative;
+    width: 25%;
+    /* border: solid; */
+}
+.quicklinks ul li{
+    list-style: none;
+}
+.quicklinks ul li a{
+    color: #999 ;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quicklinks ul li a:hover{
+    color: #ffffff;
+}
+.contact{
+    /* padding-left: 5%; */
+    width:(35% - 50px);
+    margin-right: 0 !important;
+}
+.contact .info{
+    position: relative;
+    /* border: solid; */
+}
+.contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+.contact .info li span:nth-child(1){
+    color: #ffffff;
+    font-size: 20px;
+    margin-right:10px ;
+}
+.contact .info li span{
+    color: #999;
+}
+.contact .info li span{
+    color: #999;
+}
+.contact .info li a{
+    color: #999;
+    text-decoration: none;
+
+}
+.contact .info li a:hover{
+    color: white;
+}
+.copyRight{
+    /* width: 100%; */
+    background: #181818;
+    padding: 8px 100px;
+    text-align: center;
+    color: #999;
+}
