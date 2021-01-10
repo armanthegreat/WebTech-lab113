@@ -227,6 +227,10 @@ main {
     padding-left: 10px;
 }
 
+#about-us p {
+    text-indent: 4em;
+}
+
 #about-us figure img {
     height: 20em;
 }
