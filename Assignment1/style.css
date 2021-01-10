@@ -343,13 +343,15 @@ footer dl dd {
 }
 
 .contact .info li a {
-    color: white;
     text-decoration: none;
-
 }
 
 .contact .info li a:hover {
     color: #f0c330;
+}
+
+.contact .info li a:link {
+    color: white;
 }
 
 .contact .info li a:visited {
