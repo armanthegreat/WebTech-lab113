@@ -13,6 +13,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+hr {
+    width: 90%;
+    border-width: 2px;
+}
+
 header {
     width: 100%;
     height: 90px;
@@ -181,6 +186,7 @@ main {
     width: 20%;
     text-align: center;
     caption-side: top;
+    margin-top: 100px;
 }
 
 .top-selling-items-content,
@@ -201,7 +207,7 @@ main {
     color: white;
     background-color: var(--header-bg-color);
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .recently_added_products {
@@ -209,8 +215,8 @@ main {
     text-align: center;
     border-collapse: collapse;
     caption-side: top;
-    padding-top: 1000px;
-    
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .recently_added_products th,
@@ -224,12 +230,19 @@ main {
 
 .priorities_list {
     list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
-    float: left;
     margin-left: 100px;
     margin-bottom: 50px;
+    float:right;
 }
+
+#about-us {
+    margin: 50px 0;
+}
+
 #about-us h3 {
     margin-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #about-us figure {
@@ -377,8 +390,8 @@ footer dl dd {
 
 .copyRight {
     /* width: 100%; */
-    background-color: var(--subheader-color);
+    background-color: rgb(22, 22, 22);
     padding: 8px 100px;
     text-align: center;
-    color: #999;
+    color: rgb(205, 205, 205);
 }
