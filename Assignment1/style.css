@@ -311,6 +311,7 @@ footer dl dd {
     color: #f0c330;
 }
 
+
 .contact {
     /* padding-left: 5%; */
     width: (35% - 50px);
@@ -349,6 +350,10 @@ footer dl dd {
 
 .contact .info li a:hover {
     color: #f0c330;
+}
+
+.contact .info li a:visited {
+    color: #999;
 }
 
 .copyRight {
