@@ -414,8 +414,11 @@ footer dl dd {
 
     #logo {
         text-align: center;
-        
+
+    }
+
+    #products-categories ul {
+        columns: 2;
     }
 }
 
-1203
