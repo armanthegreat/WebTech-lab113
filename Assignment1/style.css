@@ -273,7 +273,6 @@ main {
 
 footer {
     position: relative;
-    /* width: 100%; */
     height: auto;
     padding: 50px 100px;
     background-color: var(--header-bg-color);
@@ -287,12 +286,10 @@ footer .container {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    /* border: solid; */
 }
 
 footer .container .Employees {
     width: 40%;
-    /* border: solid; */
 }
 
 footer .container h2 {
@@ -352,16 +349,8 @@ footer dl dd {
     color: #f0c330;
 }
 
-
-.contact {
-    padding-left: 5%;
-    width: (35% - 50px);
-    margin-right: 0;
-}
-
 .contact .info {
     position: relative;
-    /* border: solid; */
 }
 
 .contact .info li {
@@ -395,12 +384,15 @@ footer dl dd {
     color: white;
 }
 
+.contact .info pre{
+    color: white;
+}
+
 .contact .info li p a:visited {
     color: #999;
 }
 
 .copyRight {
-    /* width: 100%; */
     background-color: rgb(22, 22, 22);
     padding: 8px 100px;
     text-align: center;
