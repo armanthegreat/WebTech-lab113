@@ -156,7 +156,6 @@ main {
     columns: 3;
     list-style: none;
     list-style-position: inside;
-    list-style-image: url("");
     font-size: 2em;
 }
 
@@ -261,10 +260,13 @@ main {
     padding-top: 45px;
     padding-right: 20px;
     padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 #about-us p {
     text-indent: 4em;
+    font-size:100%;
+    padding: 0 50px;
 }
 
 #about-us figure img {
@@ -406,11 +408,15 @@ footer dl dd {
 
     #logo {
         text-align: center;
-
     }
 
     #products-categories ul {
         columns: 2;
+    }
+
+    #about-us figure {
+        float: none;
+        text-align: center;
     }
 }
 
