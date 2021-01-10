@@ -406,3 +406,16 @@ footer dl dd {
     text-align: center;
     color: rgb(205, 205, 205);
 }
+
+@media screen and (max-width: 1203px) {
+    header nav {
+        display: none;
+    }
+
+    #logo {
+        text-align: center;
+        
+    }
+}
+
+1203
