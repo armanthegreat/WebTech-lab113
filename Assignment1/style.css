@@ -174,6 +174,7 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding-top: 0px;
 }
 
 .top-selling-items-content {
@@ -199,13 +200,17 @@ main {
     height: 3em;
     color: white;
     background-color: var(--header-bg-color);
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .recently_added_products {
     width: 1000px;
-    text-align: left;
+    text-align: center;
     border-collapse: collapse;
     caption-side: top;
+    padding-top: 1000px;
+    
 }
 
 .recently_added_products th,
@@ -219,10 +224,17 @@ main {
 
 .priorities_list {
     list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
+    float: left;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+#about-us h3 {
+    margin-top: 10px;
 }
 
 #about-us figure {
     float: left;
+    padding-top: 45px;
     padding-right: 20px;
     padding-left: 10px;
 }
