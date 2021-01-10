@@ -119,7 +119,7 @@ main {
     border-radius: 3em;
     background-color: var(--subheader-color);
     color: white;
-    border: 0px;
+    border: 1px inset var(--header-bg-color);
 }
 
 .search-product input[type="submit"]:hover {
@@ -162,11 +162,11 @@ main {
 
 #products-categories ul li ul li a:hover {
     color: #f0c330;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-#products-categories ul li ul li a:focus {
-    scale: 1.5;
+#products-categories ul li ul li a:active {
+    color: white;
 }
 
 #top-selling-items {
