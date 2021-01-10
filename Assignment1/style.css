@@ -140,13 +140,13 @@ main {
 #products-categories ul {
     columns: 3;
     list-style: none;
-    list-style-position: inside ;
+    list-style-position: inside;
     list-style-image: url("");
     font-size: 2em;
 }
 
 #products-categories ul li {
-    margin: 10px; 
+    margin: 10px;
 }
 
 #products-categories ul li ul {
@@ -229,7 +229,7 @@ main {
     height: 20em;
 }
 
-footer{
+footer {
     position: relative;
     /* width: 100%; */
     height: auto;
@@ -239,100 +239,119 @@ footer{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-footer .container{
+
+footer .container {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
     /* border: solid; */
 }
 
-footer .container .Employees{
+footer .container .Employees {
     width: 40%;
     /* border: solid; */
 }
-footer .container h2{
+
+footer .container h2 {
     position: relative;
     color: #ffffff;
     font-weight: 500;
     margin-bottom: 15px;
 
 }
-footer .container h2:before{
+
+footer .container h2:before {
     content: '';
     position: absolute;
     bottom: -5px;
     left: 0;
     width: 50px;
     height: 2px;
-    background:#f0c330;;
+    background: #f0c330;
+    ;
 }
-footer dl{
-    color:white ;
+
+footer dl {
+    color: white;
 }
-footer #emp1:hover{
+
+footer #emp1:hover {
     color: #f0c330;
     transition: 0.5s;
 }
 
-footer #emp2:hover{
+footer #emp2:hover {
     color: #f0c330;
     transition: 0.5s;
 }
 
-footer dl dd{
+footer dl dd {
     font-size: 14px;
 }
-.quicklinks{
+
+.quicklinks {
     position: relative;
     width: 25%;
     /* border: solid; */
 }
-.quicklinks ul li{
+
+.quicklinks ul li {
     list-style: none;
 }
-.quicklinks ul li a{
-    color: white ;
+
+.quicklinks ul li a {
+    color: white;
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
-.quicklinks ul li a:hover{
+
+.quicklinks ul li a:hover {
     color: #f0c330;
 }
-.contact{
+
+.contact {
     /* padding-left: 5%; */
-    width:(35% - 50px);
+    width: (35% - 50px);
     margin-right: 0 !important;
 }
-.contact .info{
+
+.contact .info {
     position: relative;
     /* border: solid; */
 }
-.contact .info li{
+
+.contact .info li {
     display: flex;
     margin-bottom: 16px;
 }
-.contact .info li span:nth-child(1){
+
+.contact .info li span:nth-child(1) {
     color: #ffffff;
     font-size: 20px;
-    margin-right:10px ;
+    margin-right: 10px;
 }
-.contact .info li span{
+
+.contact .info li span {
     color: white;
 }
-.contact .info li span{
+
+.contact .info li span {
     color: white;
 }
-.contact .info li a{
-    color:white;
+
+.contact .info li a {
+    color: white;
     text-decoration: none;
 
 }
-.contact .info li a:hover{
+
+.contact .info li a:hover {
     color: #f0c330;
 }
-.copyRight{
+
+.copyRight {
     /* width: 100%; */
     background-color: var(--subheader-color);
     padding: 8px 100px;
