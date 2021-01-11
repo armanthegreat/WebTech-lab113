@@ -1,5 +1,4 @@
 :root {
-    /* Colors generated from colorhunt.co  */
     --main-bg-color: #fcf8ec;
     --contrasting-color: #f0c330;
     --partial-text-color: #456268;
@@ -47,6 +46,7 @@ header {
 #catchphrase {
     color: white;
     font-size: small;
+    font-variant: normal;
     text-align: left;
     margin-top: 60px;
     float: left;
@@ -471,7 +471,7 @@ footer dl dd {
     }
 
     .welcome_heading {
-        font-size: 5vw;
+        font-size: 50px;
         color: black;
         text-shadow: none;
         margin: 0 20px;
@@ -502,6 +502,12 @@ footer dl dd {
     .recently_added_products {
         width: 800px;
         page-break-after: always;
+        page-break-inside: avoid;
+    }
+
+    #about_us {
+        page-break-before: always;
+        page-break-inside: avoid;
     }
 
     .after_products_categories_line {
@@ -512,8 +518,7 @@ footer dl dd {
         display: none
     }
 
-    page-break-after:;
-
-    page-break-before:;
-
+    footer {
+        page-break-before: always;
+    }
 }
