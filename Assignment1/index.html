@@ -21,8 +21,8 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#products_categories"> Explore Products</a></li>
-        <li><a href="#top-selling-items">Top selling items</a></li>
-        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#top_selling_items">Top selling items</a></li>
+        <li><a href="#about_us">About Us</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
       </ul>
     </nav>
@@ -112,11 +112,11 @@
 
     </section>
 
-    <hr>
+    <hr class="after_products_categories_line">
 
-    <section id="top-selling-items">
+    <section class="top_selling_items">
 
-      <table class="top-selling-items-content">
+      <table>
         <caption>Top selling items</caption>
         <thead>
           <tr>
@@ -145,15 +145,15 @@
           <td>90 pieces</td>
         </tr>
         <tr>
-          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" form="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Item" name="product" form="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Origin" name="origin" form="addTopSellingItem"></td>
-          <td><input type="date" value="2020-01-01" name="best_before_date" form="addTopSellingItem"></td>
-          <td><input type="text" placeholder="Amount" name="amount" form="addTopSellingItem"></td>
+          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" form="add_top_selling_item"></td>
+          <td><input type="text" placeholder="Item" name="product" form="add_top_selling_item"></td>
+          <td><input type="text" placeholder="Origin" name="origin" form="add_top_selling_item"></td>
+          <td><input type="date" value="2020-01-01" name="best_before_date" form="add_top_selling_item"></td>
+          <td><input type="text" placeholder="Amount" name="amount" form="add_top_selling_item"></td>
         </tr>
       </table>
-      <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
-      <input type="submit" form="addTopSellingItem">
+      <form id="add_top_selling_item" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
+      <input type="submit" form="add_top_selling_item">
 
     </section>
 
@@ -189,7 +189,7 @@
 
     <hr>
 
-    <section id="about-us">
+    <section id="about_us">
 
       <h3>About Us</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestias esse enim itaque molestiae! Iste
@@ -210,14 +210,24 @@
         <figcaption>Image from pexels.com</figcaption>
       </figure><br>
 
+    </section>
 
+    <section class="company_priorities">
       <h3>Our priorities</h3>
-      <ul class="priorities_list">
+      <ul>
         <li>Fresh products</li>
         <li>Quick delivery</li>
         <li>Affordable prices</li>
       </ul>
+    </section>
 
+    <section class="top_sold_brands">
+      <h3>The most selling brands</h3>
+      <ol>
+        <li>JohnsonsJohn</li>
+        <li>some brand</li>
+        <li>some brand</li>
+      </ol>
     </section>
 
   </main>
@@ -225,18 +235,19 @@
   <footer>
 
     <section class="container">
-      <section class="Employees">
+
+      <section class="employees">
 
         <h3>Employees</h3>
 
         <dl>
-          <div id="emp1">
-            <dt><a href="#"></a>Arman</dt>
+          <div>
+            <dt>Arman</dt>
             <dd>Works as a full-time accountant, acts as <strong><abbr title="aconting-representative">"Accounting
                   Superstar"</abbr></strong></dd>
           </div>
-          <div id="emp2">
-            <dt><a href="#"></a>Osman</dt>
+          <div>
+            <dt>Osman</dt>
             <dd>Works as a part-time store associate, acts as <strong><abbr title="sales-representative">"Sales
                   Rockstar"</abbr></strong></dd>
           </div>
@@ -262,7 +273,7 @@
       <section class="contact">
 
         <h3>Contact Info</h3>
-        
+
         <ul class="info">
           <li>
             <pre>Email Address : 

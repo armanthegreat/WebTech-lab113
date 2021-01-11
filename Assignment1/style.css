@@ -192,7 +192,7 @@ main {
     color: white;
 }
 
-#top-selling-items {
+.top_selling_items {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -200,23 +200,24 @@ main {
     padding-top: 0px;
 }
 
-.top-selling-items-content {
+.top_selling_items table {
     width: 20%;
     text-align: center;
     caption-side: top;
     margin-top: 100px;
 }
-.top-selling-items-content, .top-selling-items-content td {
+
+.top_selling_items table, .top_selling_items table td {
     font-size: 1.2em;
     border-collapse: collapse;
     border: 1px solid black;
 }
-.top-selling-items-content thead {
+.top_selling_items table thead {
     background-color: var(--header-bg-color);
     color: white;
 }
 
-#top-selling-items input[type="submit"] {
+.top_selling_items input[type="submit"] {
     width: 20em;
     height: 3em;
     color: white;
@@ -243,25 +244,29 @@ main {
     padding: 10px;
 }
 
-.priorities_list {
-    list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
-    margin-left: 40px;
-    margin-bottom: 50px;
-    float: left;
-    margin-right: 300px;
+.company_priorities {
+    float: right;
 }
 
-#about-us {
+.company_priorities ul {
+    list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
+}
+
+.top_sold_brands {
+    float: left;
+}
+
+#about_us {
     margin: 25px 0;
 }
 
-#about-us h3 {
+#about_us h3 {
     margin-top: 15px;
     text-align: center;
     margin-bottom: 10px;
 }
 
-#about-us figure {
+#about_us figure {
     float: left;
     padding-top: 45px;
     padding-right: 20px;
@@ -269,13 +274,13 @@ main {
     padding-bottom: 10px;
 }
 
-#about-us p {
+#about_us p {
     text-indent: 4em;
     font-size:100%;
     padding: 0 50px;
 }
 
-#about-us figure img {
+#about_us figure img {
     height: 20em;
 }
 
@@ -296,7 +301,7 @@ footer .container {
     flex-direction: row;
 }
 
-footer .container .Employees {
+footer .container .employees {
     width: 40%;
 }
 
@@ -322,16 +327,6 @@ footer dl {
     color: white;
 }
 
-footer #emp1:hover {
-    color: #f0c330;
-    transition: 0.5s;
-}
-
-footer #emp2:hover {
-    color: #f0c330;
-    transition: 0.5s;
-}
-
 footer dl dd {
     font-size: 14px;
 }
@@ -339,7 +334,6 @@ footer dl dd {
 .quicklinks {
     position: relative;
     width: 25%;
-    /* border: solid; */
 }
 
 .quicklinks ul li {
@@ -355,10 +349,6 @@ footer dl dd {
 
 .quicklinks ul li a:hover {
     color: #f0c330;
-}
-
-.contact .info {
-    position: relative;
 }
 
 .contact .info li {
@@ -411,21 +401,91 @@ footer dl dd {
     }
 
     #products_categories h3 {
-        font-size: 3vw;
+        font-size: 40px;
     }
 
     #products_categories ul {
         columns: 2;
-        font-size: 3.5vw;
+        font-size: 35px;
     }
 
-    #about-us p {
+    .top_selling_items table td img {
+        size: 1vw;
+    }
+
+    #about_us p {
         font-size: 2vw;
     }
 
-    #about-us figure {
+    #about_us figure {
         float: none;
         text-align: center;
     }
 }
 
+@media screen and (max-width: 700px) {
+    
+    .search_product { 
+        display: none;
+    }
+
+}
+
+@media print {
+
+    * {
+        font-family: Georgia, sans-serif;
+        color: black;
+    }
+
+    nav {
+        display: none
+    }
+
+    .search_product {
+        display: none;
+    }
+
+    .welcome_heading {
+        font-size: 5vw;
+        color: black;
+        text-shadow: none;
+        margin: 0 20px;
+    }
+
+    #products_categories {
+        display: none;
+    }
+
+    .top_selling_items table {
+        margin: 30px;
+    }
+
+    .top_selling_items table tr:last-child {
+        display: none;
+    }
+
+    .top_selling_items input {
+        display: none;
+    }
+
+    .recently_added_products {
+        page-break-before: always;
+    }
+
+    .after_products_categories_line {
+        display: none
+    }
+
+    .quicklinks {
+        display: none
+    }
+
+    page-break-after: ;
+
+    page-break-before: ;
+
+    orphans: ;
+
+    widows: ;
+}
