@@ -15,12 +15,12 @@
 <body>
 
   <header>
-    <h1 id="logo"> <a href="index.html">e&#8209;buy <span>&#8482;</span></a></h1>
+    <h1 id="company_name"> <a href="index.html">e&#8209;buy <span>&#8482;</span></a></h1>
 
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="#products-categories"> Explore Products</a></li>
+        <li><a href="#products_categories"> Explore Products</a></li>
         <li><a href="#top-selling-items">Top selling items</a></li>
         <li><a href="#about-us">About Us</a></li>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -33,8 +33,8 @@
 
   <main>
 
-    <section class="search-product">
-      <form id="search-product" action="e-buy.com/search">
+    <section class="search_product">
+      <form id="search_product" action="e-buy.com/search">
         <select name="searchItem">
           <option value="fruitsVegetables">Fruits & Vegetables</option>
           <option value="beverages">Beverages</option>
@@ -46,18 +46,18 @@
           <option value="other">Other</option>
         </select>
       </form>
-      <input type="text" form="search-product" placeholder="Search for products" required>
-      <input type="submit" form="search-product" value="Search" name="submitKeyword">
+      <input type="text" form="search_product" placeholder="Search for products" required>
+      <input type="submit" form="search_product" value="Search" name="submitKeyword">
     </section>
 
 
-    <h3 class="welcome_heading">Welcome to <strong>Supermarket Web Shop</strong></h3>
+    <h3 class="welcome_heading">Welcome to <strong>Supermarket Online Store</strong></h3>
 
     <hr>
 
-    <section id="products-categories">
+    <section id="products_categories">
 
-      <p>Explore <em>popular products</em> by categories:</p>
+      <h3>Explore <em>popular products</em> by categories:</h3>
 
       <ul>
         <li>Beverages
@@ -65,12 +65,12 @@
             <li><a href="index.html">Coffe & Tea</a></li>
             <li><a href="index.html">Juice</a></li>
             <li><a href="index.html">Soda</a></li>
+            <li><a href="index.html">Water</a></li>
           </ul>
         </li>
         <li>Bread & Bakery
           <ul>
             <li><a href="index.html">Sandwich loaves</a></li>
-            <li><a href="index.html">Dinner rolls</a></li>
             <li><a href="index.html">Tortillas</a></li>
             <li><a href="index.html">Bagels</a></li>
             <li><a href="index.html">Baguettes</a></li>
@@ -89,7 +89,6 @@
             <li><a href="index.html">Cheeses</a></li>
             <li><a href="index.html">Eggs</a></li>
             <li><a href="index.html">Milk</a></li>
-            <li><a href="index.html">Yogurt</a></li>
             <li><a href="index.html">Butter</a></li>
           </ul>
         </li>
@@ -98,13 +97,15 @@
             <li><a href="index.html">Shampoo</a></li>
             <li><a href="index.html">Soap</a></li>
             <li><a href="index.html">Shaving Cream</a></li>
+            <li><a href="index.html">Tissues</a></li>
           </ul>
         </li>
         <li>Fruits and Vegetables
           <ul>
             <li><a href="index.html">Apples</a></li>
             <li><a href="index.html">Strawberries</a></li>
-            <li><a href="index.html">Peach</a></li>
+            <li><a href="index.html">Onion</a></li>
+            <li><a href="index.html">Tomato</a></li>
           </ul>
         </li>
       </ul>
@@ -151,7 +152,6 @@
           <td><input type="text" placeholder="Amount" name="amount" form="addTopSellingItem"></td>
         </tr>
       </table>
-
       <form id="addTopSellingItem" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
       <input type="submit" form="addTopSellingItem">
 
@@ -190,7 +190,6 @@
     <hr>
 
     <section id="about-us">
-      
 
       <h3>About Us</h3>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestias esse enim itaque molestiae! Iste
@@ -199,17 +198,17 @@
         praesentium itaque! Vitae aliquid sapiente numquam eaque facere. Placeat voluptas quos ex molestias consectetur
         assumenda, rem vitae saepe maxime nesciunt consequuntur minima, enim delectus doloribus numquam nisi, non soluta
         cum et aperiam tempore porro. Consequatur blanditiis dignissimos, quod officiis quas nobis ducimus ut
-         iusto, velit molestias odit officia eius quo
+        iusto, velit molestias odit officia eius quo
         reprehenderit aliquid vel, quis optio necessitatibus, minima dolorem commodi minus ratione ipsa nisi obcaecati.
         Quod consectetur mollitia exercitationem, debitis corporis dolorem eius autem libero praesentium incidunt sint
         eum ex ab?</p>
 
-        <figure>
-          <img
-            src="https://images.pexels.com/photos/4968386/pexels-photo-4968386.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4968386.jpg&fm=jpg"
-            alt="Online-shopping" >
-          <figcaption>Image from pexels.com</figcaption>
-        </figure><br>
+      <figure>
+        <img
+          src="https://images.pexels.com/photos/4968386/pexels-photo-4968386.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4968386.jpg&fm=jpg"
+          alt="Online-shopping">
+        <figcaption>Image from pexels.com</figcaption>
+      </figure><br>
 
 
       <h3>Our priorities</h3>
@@ -218,13 +217,18 @@
         <li>Quick delivery</li>
         <li>Affordable prices</li>
       </ul>
+
     </section>
+
   </main>
 
   <footer>
+
     <section class="container">
       <section class="Employees">
-        <h2>Employees</h2>
+
+        <h3>Employees</h3>
+
         <dl>
           <div id="emp1">
             <dt><a href="#"></a>Arman</dt>
@@ -235,11 +239,15 @@
             <dt><a href="#"></a>Osman</dt>
             <dd>Works as a part-time store associate, acts as <strong><abbr title="sales-representative">"Sales
                   Rockstar"</abbr></strong></dd>
-            </div>
+          </div>
         </dl>
+
       </section>
+
       <section class="quicklinks">
-        <h2>Quick Links</h2>
+
+        <h3>Quick Links</h3>
+
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">FAQ</a></li>
@@ -248,14 +256,18 @@
           <li><a href="#">Terms & Condition</a></li>
           <li><a href="#">Contacts</a></li>
         </ul>
+
       </section>
+      
       <section class="contact">
-        <h2>Contact Info</h2>
+
+        <h3>Contact Info</h3>
+        
         <ul class="info">
           <li>
             <pre>Email Address : 
             </pre>
-            <p><a href="e-buy@gmail.com">e-buy@gmail.com</a></p>
+            <p><a href="e-buy@shop.com">e-buy@gmail.com</a></p>
           </li>
           <li>
             <pre>Phone Number : 0031 610102072
@@ -264,11 +276,14 @@
           </li>
         </ul>
       </section>
+
     </section>
+
   </footer>
-  <section class="copyRight">
+  <section class="copyright">
     <p>&copy; 2020 Web Shop</p>
   </section>
+
 </body>
 
 </html>
