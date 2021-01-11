@@ -192,7 +192,7 @@ main {
     color: white;
 }
 
-.top_selling_items {
+#top_selling_items {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -200,24 +200,24 @@ main {
     padding-top: 0px;
 }
 
-.top_selling_items table {
+#top_selling_items table {
     width: 20%;
     text-align: center;
     caption-side: top;
     margin-top: 100px;
 }
 
-.top_selling_items table, .top_selling_items table td {
+#top_selling_items table, #top_selling_items table td {
     font-size: 1.2em;
     border-collapse: collapse;
     border: 1px solid black;
 }
-.top_selling_items table thead {
+#top_selling_items table thead {
     background-color: var(--header-bg-color);
     color: white;
 }
 
-.top_selling_items input[type="submit"] {
+#top_selling_items input[type="submit"] {
     width: 20em;
     height: 3em;
     color: white;
@@ -244,18 +244,6 @@ main {
     padding: 10px;
 }
 
-.company_priorities {
-    float: right;
-}
-
-.company_priorities ul {
-    list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
-}
-
-.top_sold_brands {
-    float: left;
-}
-
 #about_us {
     margin: 25px 0;
 }
@@ -267,7 +255,7 @@ main {
 }
 
 #about_us figure {
-    float: left;
+    float: right;
     padding-top: 45px;
     padding-right: 20px;
     padding-left: 10px;
@@ -282,6 +270,19 @@ main {
 
 #about_us figure img {
     height: 20em;
+}
+
+.company_priorities {
+    margin: 30px;
+}
+
+.company_priorities ul {
+    list-style-image: url("https://fonts.gstatic.com/s/i/materialicons/done/v9/24px.svg?download=true");
+}
+
+.top_sold_brands {
+    margin: 30px;
+    text-align: center;
 }
 
 footer {
@@ -409,8 +410,13 @@ footer dl dd {
         font-size: 35px;
     }
 
-    .top_selling_items table td img {
-        size: 1vw;
+    #top_selling_items table td img {
+
+    }
+
+    #top_selling_items table {
+        font-size: 1vw;
+        width: 1vw;
     }
 
     #about_us p {
@@ -424,9 +430,13 @@ footer dl dd {
 }
 
 @media screen and (max-width: 700px) {
-    
+
     .search_product { 
         display: none;
+    }
+
+    .products_categories h3 {
+        font-size: 1vw;
     }
 
 }
@@ -455,17 +465,18 @@ footer dl dd {
 
     #products_categories {
         display: none;
+        width: 50%;
     }
 
-    .top_selling_items table {
+    #top_selling_items table {
         margin: 30px;
     }
 
-    .top_selling_items table tr:last-child {
+    #top_selling_items table tr:last-child {
         display: none;
     }
 
-    .top_selling_items input {
+    #top_selling_items input {
         display: none;
     }
 

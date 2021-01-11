@@ -114,7 +114,7 @@
 
     <hr class="after_products_categories_line">
 
-    <section class="top_selling_items">
+    <section id="top_selling_items">
 
       <table>
         <caption>Top selling items</caption>
@@ -127,30 +127,32 @@
             <th>Quantity</th>
           </tr>
         </thead>
-        <tr>
-          <td><img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Baguettes_-_stonesoup.jpg/220px-Baguettes_-_stonesoup.jpg"
-              height="150" alt="baguette"></td>
-          <td>Baguette</td>
-          <td>France</td>
-          <td>February 2021</td>
-          <td>75 pieces</td>
-        </tr>
-        <tr>
-          <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Makizushi.jpg/270px-Makizushi.jpg"
-              height="150" alt="sushi"></td>
-          <td>Sushi</td>
-          <td>Japan</td>
-          <td>June 2022</td>
-          <td>90 pieces</td>
-        </tr>
-        <tr>
-          <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" form="add_top_selling_item"></td>
-          <td><input type="text" placeholder="Item" name="product" form="add_top_selling_item"></td>
-          <td><input type="text" placeholder="Origin" name="origin" form="add_top_selling_item"></td>
-          <td><input type="date" value="2020-01-01" name="best_before_date" form="add_top_selling_item"></td>
-          <td><input type="text" placeholder="Amount" name="amount" form="add_top_selling_item"></td>
-        </tr>
+        <tbody>
+          <tr>
+            <td><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Baguettes_-_stonesoup.jpg/220px-Baguettes_-_stonesoup.jpg"
+                height="150" alt="baguette"></td>
+            <td>Baguette</td>
+            <td>France</td>
+            <td>February 2021</td>
+            <td>75 pieces</td>
+          </tr>
+          <tr>
+            <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Makizushi.jpg/270px-Makizushi.jpg"
+                height="150" alt="sushi"></td>
+            <td>Sushi</td>
+            <td>Japan</td>
+            <td>June 2022</td>
+            <td>90 pieces</td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="URL (JPEG or PNG)" name="image" form="add_top_selling_item"></td>
+            <td><input type="text" placeholder="Item" name="product" form="add_top_selling_item"></td>
+            <td><input type="text" placeholder="Origin" name="origin" form="add_top_selling_item"></td>
+            <td><input type="date" value="2020-01-01" name="best_before_date" form="add_top_selling_item"></td>
+            <td><input type="text" placeholder="Amount" name="amount" form="add_top_selling_item"></td>
+          </tr>
+        </tbody>
       </table>
       <form id="add_top_selling_item" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
       <input type="submit" form="add_top_selling_item">
@@ -192,6 +194,14 @@
     <section id="about_us">
 
       <h3>About Us</h3>
+
+      <figure>
+        <img
+          src="https://images.pexels.com/photos/4968386/pexels-photo-4968386.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4968386.jpg&fm=jpg"
+          alt="Online-shopping">
+        <figcaption>Image from pexels.com</figcaption>
+      </figure>
+
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus molestias esse enim itaque molestiae! Iste
         deleniti corporis debitis, fugiat quos veritatis assumenda itaque laborum aperiam perferendis possimus voluptas
         odit odio. Officia maiores error provident, totam deleniti voluptas natus quas accusamus neque nam, laboriosam
@@ -202,13 +212,6 @@
         reprehenderit aliquid vel, quis optio necessitatibus, minima dolorem commodi minus ratione ipsa nisi obcaecati.
         Quod consectetur mollitia exercitationem, debitis corporis dolorem eius autem libero praesentium incidunt sint
         eum ex ab?</p>
-
-      <figure>
-        <img
-          src="https://images.pexels.com/photos/4968386/pexels-photo-4968386.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4968386.jpg&fm=jpg"
-          alt="Online-shopping">
-        <figcaption>Image from pexels.com</figcaption>
-      </figure><br>
 
     </section>
 
@@ -269,7 +272,7 @@
         </ul>
 
       </section>
-      
+
       <section class="contact">
 
         <h3>Contact Info</h3>
