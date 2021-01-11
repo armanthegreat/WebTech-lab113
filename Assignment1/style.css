@@ -414,11 +414,13 @@ footer dl dd {
         font-size: 35px;
     }
 
-    #top_selling_items table td img {}
-
     #top_selling_items table {
-        font-size: 1vw;
-        width: 1vw;
+        font-size: 15px;
+        width: 500px;
+    }
+
+    .recently_added_products {
+        width: 500px;
     }
 
     #about_us p {
@@ -439,6 +441,10 @@ footer dl dd {
 
     .products_categories h3 {
         font-size: 1vw;
+    }
+
+    #top_selling_items table td:first-child {
+        display: none;
     }
 
 }
@@ -481,7 +487,7 @@ footer dl dd {
         width: 800px;
     }
 
-    #top_selling_items table td:first-child {
+    #top_selling_items table .product_image {
         display: none;
     }
 
@@ -494,6 +500,7 @@ footer dl dd {
     }
 
     .recently_added_products {
+        width: 800px;
         page-break-after: always;
     }
 
