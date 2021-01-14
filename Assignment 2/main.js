@@ -1,8 +1,6 @@
 // SORTING ALGORITHM
 $('.t1_head').click(function () {
-    console.log("button pressed")
     let table = $(this).parents('table').eq(0)
-    console.log(table.length)
     let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
     this.asc = !this.asc
 
@@ -38,4 +36,29 @@ $(".reset_database").click(function () {
             console.log("Database reset")
         }
     });
+});
+
+// LOADING DATA FROM DB INTO TABLE
+
+
+
+
+// SUBMITTING NEW ITEM; EVENT LISTENER
+$('#add_top_selling_item').submit(function (e) { 
+    e.preventDefault();
+    
+});
+
+
+// EVENT LISTENER, SUBMITING NEW ITEM
+$(".ajax_call").click(function () { 
+    $.ajax({
+        type: "get",
+        url: "https://wt.ops.labs.vu.nl/api21/246926a4",
+        dataType: "json",
+        success: function (data) {
+            $("table tbody").html("<tr><td>something</td></tr>");
+            console.log(data[0].product)
+        }
+    });    
 });
