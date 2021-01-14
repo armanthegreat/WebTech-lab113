@@ -1,15 +1,15 @@
 // SORTING ALGORITHM
 $('.t1_head').click(function () {
-    let table = $(this).parents('table').eq(0)
-    let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-    this.asc = !this.asc
+    let table = $(this).parents('table').eq(0);
+    let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
+    this.asc = !this.asc;
 
     if (!this.asc) {
-        rows = rows.reverse()
+        rows = rows.reverse();
     }
 
     for (let i = 0; i < rows.length; i++) {
-        table.append(rows[i])
+        table.append(rows[i]);
     }
 })
 
@@ -26,8 +26,11 @@ function getCellValue(row, index) {
     return $(row).children('td').eq(index).text()
 }
 
+
 // EVENT LISTENER, RESETING DATABASE
-$(".reset_database").click(function () { 
+$(".reset_database").click(function (event) {
+    event.preventDefault();
+
     $.ajax({
         type: "get",
         url: "https://wt.ops.labs.vu.nl/api21/246926a4/reset",
@@ -44,14 +47,14 @@ $(".reset_database").click(function () {
 
 
 // SUBMITTING NEW ITEM; EVENT LISTENER
-$('#add_top_selling_item').submit(function (e) { 
+$('#add_top_selling_item').submit(function (e) {
     e.preventDefault();
-    
+
 });
 
 
 // EVENT LISTENER, SUBMITING NEW ITEM
-$(".ajax_call").click(function () { 
+$(".ajax_call").click(function () {
     $.ajax({
         type: "get",
         url: "https://wt.ops.labs.vu.nl/api21/246926a4",
@@ -60,5 +63,5 @@ $(".ajax_call").click(function () {
             $("table tbody").html("<tr><td>something</td></tr>");
             console.log(data[0].product)
         }
-    });    
+    });
 });
