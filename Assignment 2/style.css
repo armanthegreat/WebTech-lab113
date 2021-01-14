@@ -115,6 +115,10 @@ main {
     background-image: repeating-linear-gradient(#d7d7d7, white);
 }
 
+.t1_head {
+    cursor: pointer;
+}
+
 .search_product {
     display: flex;
     flex-direction: row;

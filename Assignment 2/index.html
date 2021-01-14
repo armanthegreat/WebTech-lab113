@@ -11,7 +11,10 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Montserrat:wght@500&family=Poppins:wght@300&display=swap"
     rel="stylesheet">
-    <script src="main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -123,10 +126,10 @@
         <thead>
           <tr>
             <th></th>
-            <th>Product</th>
-            <th>Origin</th>
-            <th>Expiration date</th>
-            <th>Quantity</th>
+            <th class="t1_head">Product</th>
+            <th class="t1_head">Origin</th>
+            <th class="t1_head">Expiration date</th>
+            <th class="t1_head">Quantity</th>
           </tr>
         </thead>
         <tbody>
@@ -160,34 +163,39 @@
       <form id="add_top_selling_item" action="https://wt.ops.labs.vu.nl/api21/e532098f" method="post"></form>
       <input type="submit" form="add_top_selling_item">
 
+      <button class="reset_database">Reset</button>
+
     </section>
 
     <hr>
 
     <section>
-
       <table class="recently_added_products">
         <caption><strong>Recently Added Products</strong></caption>
-        <tr>
-          <th>Product</th>
-          <th>Price</th>
-          <th>Available</th>
-        </tr>
-        <tr>
-          <td>Shampoo</td>
-          <td>3$</td>
-          <td>In Stock</td>
-        </tr>
-        <tr>
-          <td>Toothpaste</td>
-          <td>2$</td>
-          <td>Out of Stock</td>
-        </tr>
-        <tr>
-          <td>Milk</td>
-          <td>1$</td>
-          <td>Out of Stock</td>
-        </tr>
+        <thead>
+          <tr>
+            <th class="t1_head">Product</th>
+            <th class="t1_head">Price</th>
+            <th class="t1_head">Available</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Shampoo</td>
+            <td>3$</td>
+            <td>In Stock</td>
+          </tr>
+          <tr>
+            <td>Toothpaste</td>
+            <td>2$</td>
+            <td>Out of Stock</td>
+          </tr>
+          <tr>
+            <td>Milk</td>
+            <td>1$</td>
+            <td>Out of Stock</td>
+          </tr>
+        </tbody>
       </table>
 
     </section>
@@ -312,6 +320,8 @@
   <section class="copyright">
     <p>&copy; 2020 Web Shop</p>
   </section>
+
+  <script src="main.js"></script>
 
 </body>
 
