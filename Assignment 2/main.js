@@ -64,7 +64,7 @@ topSellingItemForm.submit(function (e) {
                 data: "data",
                 dataType: "JSON",
                 success: function (response) {
-                    topSellingItemTable.find("tbody").append(`<tr><td><img src="${response.image}></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
+                    topSellingItemTable.find("tbody").append(`<tr><td><img src="${response.image} height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
                 }
             });
         }
