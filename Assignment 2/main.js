@@ -1,67 +1,95 @@
+const topSellingItemTable = $("#top_selling_items table");
+const topSellingItemForm = $('#add_top_selling_item');
+
 // SORTING ALGORITHM
-$('.t1_head').click(function () {
-    let table = $(this).parents('table').eq(0);
-    let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()));
-    this.asc = !this.asc;
+// $(".sortable_column").click(function () {
+//     let table = $(this).parents("table").eq(0);
+//     let tableLength = table.find("tbody").length
+//     let rows = table.find("tr").slice(1, tableLength).toArray().sort(comparer($(this).index()));
+//     let rowsForSort;
+//     this.asc = !this.asc;
 
-    if (!this.asc) {
-        rows = rows.reverse();
-    }
+//     if (!this.asc) {
+//         rows = rows.reverse();
+//     }
 
-    for (let i = 0; i < rows.length; i++) {
-        table.append(rows[i]);
-    }
-})
+//     for (let i = 0; i < rows.length; i++) {
+//         table.append(rows[i]);
+//     }
+// })
 
-function comparer(index) {
-    return function (a, b) {
-        let valA = getCellValue(a, index);
-        let valB = getCellValue(b, index);
+// function comparer(index) {
+//     return function (a, b) {
+//         let valA = getCellValue(a, index);
+//         let valB = getCellValue(b, index);
 
-        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
-    }
-}
+//         return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+//     }
+// }
 
-function getCellValue(row, index) {
-    return $(row).children('td').eq(index).text()
-}
+// function getCellValue(row, index) {
+//     return $(row).children('td').eq(index).text()
+// }
 
 
-// EVENT LISTENER, RESETING DATABASE
-$(".reset_database").click(function (event) {
-    event.preventDefault();
-
+// LOADING DATA FROM DB
+function loadDataToTable() {
     $.ajax({
         type: "get",
-        url: "https://wt.ops.labs.vu.nl/api21/246926a4/reset",
-        dataType: "json",
-        success: function () {
-            console.log("Database reset")
+        url: "https://wt.ops.labs.vu.nl/api21/e532098f",
+        data: "data",
+        dataType: "JSON",
+        success: function (response) {
+            for(let i = 0; i < response.length; i++) {
+                topSellingItemTable.find("tbody").append(`<tr><td><img src="${response[i].image}" height="150"></td><td> ${response[i].product} </td><td> ${response[i].origin} </td><td> ${response[i].best_before_date} </td><td> ${response[i].amount} </td></tr>`)
+            }
         }
     });
-});
-
-// LOADING DATA FROM DB INTO TABLE
+}
 
 
-
-
-// SUBMITTING NEW ITEM; EVENT LISTENER
-$('#add_top_selling_item').submit(function (e) {
+// SUBMITTING NEW ITEM, EVENT LISTENER
+topSellingItemForm.submit(function (e) {
     e.preventDefault();
 
-});
-
-
-// EVENT LISTENER, SUBMITING NEW ITEM
-$(".ajax_call").click(function () {
     $.ajax({
-        type: "get",
-        url: "https://wt.ops.labs.vu.nl/api21/246926a4",
-        dataType: "json",
+        type: "post",
+        url: "https://wt.ops.labs.vu.nl/api21/e532098f",
+        data: topSellingItemForm.serialize(),
         success: function (data) {
-            $("table tbody").html("<tr><td>something</td></tr>");
-            console.log(data[0].product)
+            // ADDING ITEM TO TABLE FROM RESPONSE 
+            $.ajax({
+                type: "get",
+                url: data.URI,
+                data: "data",
+                dataType: "JSON",
+                success: function (response) {
+                    topSellingItemTable.find("tbody").append(`<tr><td><img src="${response.image}></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
+                }
+            });
         }
     });
 });
+
+
+// RESETING DATABASE, EVENT LISTENER
+$(".reset_database").click(function () {
+    $.ajax({
+        type: "get",
+        url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
+        dataType: "json",
+        success: function (response) {
+            console.log(response)
+            // DELETE EVERYTHING FROM TABLE
+            // ADD ITEMS FROM DB AFTER RESET
+        }
+    });
+});
+
+
+// EXECUTION:
+$(document).ready(function () {
+    loadDataToTable()
+});
+
+
