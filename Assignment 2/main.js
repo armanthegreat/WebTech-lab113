@@ -1,7 +1,8 @@
 const topSellingItemTable = $("#top_selling_items table");
 const topSellingItemForm = $('#add_top_selling_item');
 
-// SORTING ALGORITHM
+// 1. SORTING ALGORITHM
+
 // $(".sortable_column").click(function () {
 //     let table = $(this).parents("table").eq(0);
 //     let tableLength = table.find("tbody").length
@@ -32,7 +33,23 @@ const topSellingItemForm = $('#add_top_selling_item');
 // }
 
 
-// LOADING DATA FROM DB
+// 2.RESET BUTTON
+$(".reset_database").click(function () {
+    $.ajax({
+        type: "get",
+        url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
+        dataType: "json",
+        success: function (response) {
+            // DELETE EVERYTHING FROM TABLE
+            topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
+            // ADD ITEMS FROM DB AFTER RESET
+            loadDataToTable();
+        }
+    });
+});
+
+
+// 3.DYNAMIC TABLE CONTENT
 function loadDataToTable() {
     $.ajax({
         type: "get",
@@ -40,15 +57,19 @@ function loadDataToTable() {
         data: "data",
         dataType: "JSON",
         success: function (response) {
-            for(let i = 0; i < response.length; i++) {
-                topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[i].image}" height="150"></td><td> ${response[i].product} </td><td> ${response[i].origin} </td><td> ${response[i].best_before_date} </td><td> ${response[i].amount} </td></tr>`)
+            // for(let i = 0; i < response.length; i++) {
+            //     topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[i].image}" height="150"></td><td> ${response[i].product} </td><td> ${response[i].origin} </td><td> ${response[i].best_before_date} </td><td> ${response[i].amount} </td></tr>`)
+            // }
+
+            for (let item in response) {
+                topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
             }
         }
     });
 }
 
 
-// SUBMITTING NEW ITEM, EVENT LISTENER
+// 4.SINGLE PAGE FORM SUBMIT
 topSellingItemForm.submit(function (e) {
     e.preventDefault();
 
@@ -67,24 +88,7 @@ topSellingItemForm.submit(function (e) {
                     topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
                     console.log(topSellingItemTable.find("tbody tr").length);
                 }
-
             });
-        }
-    });
-});
-
-
-// RESETING DATABASE, EVENT LISTENER
-$(".reset_database").click(function () {
-    $.ajax({
-        type: "get",
-        url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
-        dataType: "json",
-        success: function (response) {
-            // DELETE EVERYTHING FROM TABLE
-            topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
-            // ADD ITEMS FROM DB AFTER RESET
-            loadDataToTable();
         }
     });
 });
@@ -94,5 +98,3 @@ $(".reset_database").click(function () {
 $(document).ready(function () {
     loadDataToTable()
 });
-
-
