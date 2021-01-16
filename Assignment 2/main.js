@@ -65,6 +65,7 @@ topSellingItemForm.submit(function (e) {
                 dataType: "JSON",
                 success: function (response) {
                     topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
+                    console.log(topSellingItemTable.find("tbody tr").length);
                 }
 
             });
@@ -80,9 +81,10 @@ $(".reset_database").click(function () {
         url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
         dataType: "json",
         success: function (response) {
-            console.log(response)
             // DELETE EVERYTHING FROM TABLE
+            topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
             // ADD ITEMS FROM DB AFTER RESET
+            loadDataToTable();
         }
     });
 });
