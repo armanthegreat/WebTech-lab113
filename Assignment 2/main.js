@@ -1,5 +1,6 @@
 const topSellingItemTable = $("#top_selling_items table");
-const topSellingItemForm = $('#add_top_selling_item');
+const topSellingItemForm = $("#add_top_selling_item");
+const sortableColumns = $("sortable_column")
 
 // 1. SORTING ALGORITHM
 
@@ -33,6 +34,18 @@ const topSellingItemForm = $('#add_top_selling_item');
 // }
 
 
+
+// NEW SORTING ALGORITHM GOES HERE ↓↓↓↓↓↓↓↓
+
+// user sortableColumns variable instead of th tag
+
+
+
+
+
+
+
+
 // 2.RESET BUTTON
 $(".reset_database").click(function () {
     $.ajax({
@@ -57,10 +70,6 @@ function loadDataToTable() {
         data: "data",
         dataType: "JSON",
         success: function (response) {
-            // for(let i = 0; i < response.length; i++) {
-            //     topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[i].image}" height="150"></td><td> ${response[i].product} </td><td> ${response[i].origin} </td><td> ${response[i].best_before_date} </td><td> ${response[i].amount} </td></tr>`)
-            // }
-
             for (let item in response) {
                 topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
             }
@@ -86,7 +95,6 @@ topSellingItemForm.submit(function (e) {
                 dataType: "JSON",
                 success: function (response) {
                     topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
-                    console.log(topSellingItemTable.find("tbody tr").length);
                 }
             });
         }
