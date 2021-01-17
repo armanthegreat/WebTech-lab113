@@ -256,6 +256,12 @@ main {
     padding: 10px;
 }
 
+.sortable_column_header {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
 #about_us {
     margin: 25px 0;
 }

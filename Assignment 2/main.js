@@ -1,7 +1,6 @@
 const topSellingItemTable = $("#top_selling_items table");
 const topSellingItemForm = $("#add_top_selling_item");
 const sortableColumns = $("sortable_column");
-let serverResponseData = [];
 
 // 1. SORTING ALGORITHM
 
@@ -55,38 +54,34 @@ let serverResponseData = [];
 // })));
 
 
-// Third but its the first one u found  ----------------------------------------
-$('th').click(function () {
-    // loadDataToTable();
-    if (!$(this).hasClass("nonSortable")) {
-        var table = $(this).parents('table').eq(0)
-        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
-        this.asc = !this.asc
-        if (!this.asc) {
-            rows = rows.reverse()
-        }
-
-        for (var i = 0; i < rows.length; i++) {
-            if (!$(rows[i]).hasClass("sortable_column")) {
-                table.find("tr").eq(0).after(rows[i])
-            }
-        }
-    } else {
-        console.log("Non sortable")
+// STATIC TABLE SORT
+$('.sortable_column_header').click(function () {
+    // loadDataToTable(); -- TRY USING FOR DYNAMIC TABLE SORTING
+    let table = $(this).parents('table').eq(0)
+    let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+    this.asc = !this.asc
+    if (!this.asc) {
+        rows = rows.reverse()
     }
 
+    for (var i = 0; i < rows.length; i++) {
+        if (!$(rows[i]).hasClass("sortable_column")) {
+            table.find("tr").eq(0).after(rows[i])
+        }
+    }
 });
 
-//Helper method used to compare table cells
+// Helper function 
 function comparer(index) {
     return function (a, b) {
-        var valA = getCellValue(a, index),
-            valB = getCellValue(b, index)
+        let valA = getCellValue(a, index);
+        let valB = getCellValue(b, index);
+
         return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
     }
 }
 
-//Helper method used to find a cells value
+//Helper function
 function getCellValue(row, index) {
     return $(row).children('td').eq(index).text()
 }
@@ -117,8 +112,6 @@ function loadDataToTable() {
         dataType: "JSON",
         success: function (response) {
             for (let item in response) {
-                console.log(item);
-                serverResponseData[0]
                 topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
             }
         }
@@ -150,7 +143,7 @@ topSellingItemForm.submit(function (e) {
 });
 
 
-// EXECUTION:
+// EXECUTION
 $(document).ready(function () {
     loadDataToTable()
 });
