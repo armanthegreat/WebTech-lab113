@@ -5,7 +5,7 @@ let serverResponseData = [];
 
 // 1. SORTING ALGORITHM
 
-// $(".sortable_column").click(function () {
+// $("th").click(function () {
 //     let table = $(this).parents("table").eq(0);
 //     let tableLength = table.find("tbody").length
 //     let rows = table.find("tr").slice(1, tableLength).toArray().sort(comparer($(this).index()));
@@ -33,13 +33,25 @@ let serverResponseData = [];
 // function getCellValue(row, index) {
 //     return $(row).children('td').eq(index).text()
 // }
-
-
-
 // NEW SORTING ALGORITHM GOES HERE ↓↓↓↓↓↓↓↓
 
 // user sortableColumns variable instead of th tag
 
+
+// It is all in vanila js no jq is used.
+
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+
+document.querySelectorAll('.sortable_column').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
+})));
 
 
 // 2.RESET BUTTON
