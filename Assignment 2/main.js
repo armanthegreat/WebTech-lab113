@@ -38,20 +38,58 @@ let serverResponseData = [];
 // user sortableColumns variable instead of th tag
 
 
+// Second sorthing(but takes 2 headers)--------------------------
 // It is all in vanila js no jq is used.
 
-const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+// const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
 
-const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+// const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+//     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
+//     )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
-document.querySelectorAll('.sortable_column').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr) );
-})));
+// document.querySelectorAll('.sortable_column').forEach(th => th.addEventListener('click', (() => {
+//     const table = th.closest('table');
+//     Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+//         .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+//         .forEach(tr => table.appendChild(tr) );
+// })));
+
+
+// Third but its the first one u found  ----------------------------------------
+$('th').click(function () {
+    // loadDataToTable();
+    if (!$(this).hasClass("nonSortable")) {
+        var table = $(this).parents('table').eq(0)
+        var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+        this.asc = !this.asc
+        if (!this.asc) {
+            rows = rows.reverse()
+        }
+
+        for (var i = 0; i < rows.length; i++) {
+            if (!$(rows[i]).hasClass("sortable_column")) {
+                table.find("tr").eq(0).after(rows[i])
+            }
+        }
+    } else {
+        console.log("Non sortable")
+    }
+
+});
+
+//Helper method used to compare table cells
+function comparer(index) {
+    return function (a, b) {
+        var valA = getCellValue(a, index),
+            valB = getCellValue(b, index)
+        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
+    }
+}
+
+//Helper method used to find a cells value
+function getCellValue(row, index) {
+    return $(row).children('td').eq(index).text()
+}
 
 
 // 2.RESET BUTTON
