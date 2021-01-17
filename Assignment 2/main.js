@@ -1,6 +1,7 @@
 const topSellingItemTable = $("#top_selling_items table");
 const topSellingItemForm = $("#add_top_selling_item");
-const sortableColumns = $("sortable_column")
+const sortableColumns = $("sortable_column");
+let serverResponseData = [];
 
 // 1. SORTING ALGORITHM
 
@@ -41,11 +42,6 @@ const sortableColumns = $("sortable_column")
 
 
 
-
-
-
-
-
 // 2.RESET BUTTON
 $(".reset_database").click(function () {
     $.ajax({
@@ -71,6 +67,8 @@ function loadDataToTable() {
         dataType: "JSON",
         success: function (response) {
             for (let item in response) {
+                console.log(item);
+                serverResponseData[0]
                 topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
             }
         }
