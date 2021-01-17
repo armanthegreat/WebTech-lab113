@@ -235,6 +235,17 @@ main {
     color: white;
     background-color: var(--header-bg-color);
     margin-top: 20px;
+    margin-right: 5px;
+    margin-bottom: 100px;
+}
+
+#top_selling_items input[type="reset"] {
+    width: 20em;
+    height: 3em;
+    color: white;
+    background-color: var(--header-bg-color);
+    margin-top: 20px;
+    margin-left: 5px;
     margin-bottom: 100px;
 }
 
