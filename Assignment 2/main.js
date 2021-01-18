@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
     const topSellingItemTable = $("#top_selling_items table");
     const topSellingItemForm = $("#add_top_selling_item");
 
@@ -24,7 +23,7 @@ $(document).ready(function () {
         }
     });
 
-    // Helper function 
+    // Helper functions
     function comparer(index) {
         return function (a, b) {
             let valA = getCellValue(a, index);
@@ -34,7 +33,6 @@ $(document).ready(function () {
         }
     }
 
-    //Helper function
     function getCellValue(row, index) {
         return $(row).children('td').eq(index).text()
     }
