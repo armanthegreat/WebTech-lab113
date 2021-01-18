@@ -4,59 +4,10 @@ const sortableColumns = $("sortable_column");
 
 // 1. SORTING ALGORITHM
 
-// $("th").click(function () {
-//     let table = $(this).parents("table").eq(0);
-//     let tableLength = table.find("tbody").length
-//     let rows = table.find("tr").slice(1, tableLength).toArray().sort(comparer($(this).index()));
-//     let rowsForSort;
-//     this.asc = !this.asc;
-
-//     if (!this.asc) {
-//         rows = rows.reverse();
-//     }
-
-//     for (let i = 0; i < rows.length; i++) {
-//         table.append(rows[i]);
-//     }
-// })
-
-// function comparer(index) {
-//     return function (a, b) {
-//         let valA = getCellValue(a, index);
-//         let valB = getCellValue(b, index);
-
-//         return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.toString().localeCompare(valB)
-//     }
-// }
-
-// function getCellValue(row, index) {
-//     return $(row).children('td').eq(index).text()
-// }
-// NEW SORTING ALGORITHM GOES HERE ↓↓↓↓↓↓↓↓
-
-// user sortableColumns variable instead of th tag
-
-
-// Second sorthing(but takes 2 headers)--------------------------
-// It is all in vanila js no jq is used.
-
-// const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
-
-// const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
-//     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-//     )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-// document.querySelectorAll('.sortable_column').forEach(th => th.addEventListener('click', (() => {
-//     const table = th.closest('table');
-//     Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-//         .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-//         .forEach(tr => table.appendChild(tr) );
-// })));
 
 
 // STATIC TABLE SORT
 $('.sortable_column_header').click(function () {
-    // loadDataToTable(); -- TRY USING FOR DYNAMIC TABLE SORTING
     let table = $(this).parents('table').eq(0)
     let rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
     this.asc = !this.asc

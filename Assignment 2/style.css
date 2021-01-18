@@ -224,7 +224,7 @@ main {
     border: 1px solid black;
 }
 
-#top_selling_items table thead {
+table thead {
     background-color: var(--header-bg-color);
     color: white;
 }
