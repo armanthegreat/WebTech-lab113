@@ -1,11 +1,7 @@
 const topSellingItemTable = $("#top_selling_items table");
 const topSellingItemForm = $("#add_top_selling_item");
-const sortableColumns = $("sortable_column");
 
 // 1. SORTING ALGORITHM
-
-
-
 // STATIC TABLE SORT
 $('.sortable_column_header').click(function () {
     let table = $(this).parents('table').eq(0)
