@@ -17,7 +17,7 @@ $('.sortable_column_header').click(function () {
 
     for (var i = 0; i < rows.length; i++) {
         if (!$(rows[i]).hasClass("sortable_column")) {
-            table.find("tr").eq(0).after(rows[i])
+            table.find("tbody").eq(0).after(rows[i])
         }
     }
 });
