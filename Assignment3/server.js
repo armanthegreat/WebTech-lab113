@@ -9,6 +9,10 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 
+// ************************************************************************************************ //
+//                                       ROUTERS                                                    //
+
+// GETTING ALL ITEMS
 router.get("/items", function(req, res) {
 
     let sql = "SELECT * from products"
@@ -20,7 +24,7 @@ router.get("/items", function(req, res) {
     
 });
 
-
+// GETTING PARTICULAR ITEM WITH ID
 router.get("/items", function(req, res) {
 
     let sql = "SELECT * FROM products WHERE id=?";
@@ -32,7 +36,7 @@ router.get("/items", function(req, res) {
     
 });
 
-
+// POSTING ITEM 
 router.post("/items", function(req, res) {
 
 
@@ -45,7 +49,7 @@ router.post("/items", function(req, res) {
 
 });
 
-
+// UPDATING ITEM
 router.put("/items", function(req, res) {
 
     db.run(`UPDATE products
@@ -58,7 +62,7 @@ router.put("/items", function(req, res) {
 
 });
 
-
+// DELETING ITEM
 router.delete("/items", function(req, res) {
 
     db.run("DELETE FROM products WHERE id=" + id, function(err) {
@@ -71,12 +75,15 @@ router.delete("/items", function(req, res) {
 
 app.use("/api", router);
 
-// Listening on a port 3000
+// ************************************************************************************************ //
+
+
+// LISTENING ON PORT: 3000
 app.listen(3000);
 console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/hello");
 
 
-// Init DATABASE
+// INIT DATABASE
 function my_database(filename) {
     // Conncect to db by opening filename, create filename if it does not exist:
     var db = new sqlite.Database(filename, (err) => {
