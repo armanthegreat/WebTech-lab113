@@ -1,11 +1,11 @@
 const sqlite = require('sqlite3').verbose();
-let db = my_database('./products.db');
+const db = my_database('./products.db');
 
-var express = require("express");
-var app = express();
-let router = express.Router();
+const express = require("express");
+const app = express();
+const router = express.Router();
 
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 
@@ -13,36 +13,24 @@ router.get("/items", function(req, res) {
 
     let sql = "SELECT * from products"
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(...
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err) {
 
-    // db.all(sql, [], function(err, rows) {
-        // if (err) throw err;
+    }
 
-        // res.json(rows)
-    } )
-
-    // Response gets converted to JSON and sent further
-    // res.json()
-})
+    
+});
 
 
 router.get("/items", function(req, res) {
 
     let sql = "SELECT * FROM products WHERE id=?";
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(...
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err) {
 
-    // db.get(sql,[res.body.id], function(err, rows) {
-    //     if (err) console.log(err);
+    }
 
-    //     console.log(rows)
-    //     res.json(rows)
-
-    // } )
-
-    // Response gets converted to JSON and sent further
-    // res.json()
-})
+    
+});
 
 
 router.post("/items", function(req, res) {
@@ -50,12 +38,12 @@ router.post("/items", function(req, res) {
 
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image)
     VALUES (?, ?, ?, ?, ?)`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(...
+    [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(err) {
+        
+    }
 
 
-    // Response gets converted to JSON and sent further
-    res.json()
-})
+});
 
 
 router.put("/items", function(req, res) {
@@ -63,35 +51,32 @@ router.put("/items", function(req, res) {
     db.run(`UPDATE products
     SET product=?, origin=?, best_before_date=?, amount=?,
     image=? WHERE id=?`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(...
+    [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(err) {
+
+    }
 
 
-    // Response gets converted to JSON and sent further
-    res.json()
-})
+});
 
 
 router.delete("/items", function(req, res) {
 
-    db.run("DELETE FROM products WHERE id=" + id, function(...
+    db.run("DELETE FROM products WHERE id=" + id, function(err) {
+
+    }
 
 
-
-    // Response gets converted to JSON and sent further
-    res.json()
-})
-
+});
 
 
 app.use("/api", router);
 
-
+// Listening on a port 3000
 app.listen(3000);
 console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/hello");
 
 
-// ###############################################################################
-// Some helper functions called above
+// Init DATABASE
 function my_database(filename) {
     // Conncect to db by opening filename, create filename if it does not exist:
     var db = new sqlite.Database(filename, (err) => {
