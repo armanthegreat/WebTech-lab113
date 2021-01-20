@@ -14,9 +14,9 @@ router.get("/items", function(req, res) {
     let sql = "SELECT * from products"
 
     db.all(sql, [], function(err, rows) {
-        if (err) throw err;
+        // if (err) throw err;
 
-        res.json(rows)
+        // res.json(rows)
     } )
 
     // Response gets converted to JSON and sent further
@@ -24,23 +24,29 @@ router.get("/items", function(req, res) {
 })
 
 
-router.get("/items/", function(req, res) {
+router.get("/items", function(req, res) {
 
+    let sql = "SELECT * FROM products WHERE id=?";
 
+    db.get(sql,[res.body.id], function(err, rows) {
+        if (err) console.log(err);
 
+        console.log(rows)
+        res.json(rows)
+
+    } )
 
     // Response gets converted to JSON and sent further
-    res.json()
+    // res.json()
 })
 
 
 router.post("/items", function(req, res) {
 
-    console.log(req.body)
 
 
     // Response gets converted to JSON and sent further
-    res.json(req.body)
+    res.json()
 })
 
 
