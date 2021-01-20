@@ -15,8 +15,6 @@ app.use(bodyParser.json());
 // GETTING ALL ITEMS
 router.get("/items", function(req, res) {
 
-    let sql = "SELECT * from products"
-
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err) {
 
     })
@@ -26,8 +24,6 @@ router.get("/items", function(req, res) {
 
 // GETTING PARTICULAR ITEM WITH ID
 router.get("/items", function(req, res) {
-
-    let sql = "SELECT * FROM products WHERE id=?";
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err) {
 
