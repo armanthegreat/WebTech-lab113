@@ -19,7 +19,7 @@ router.get("/items", function(req, res) {
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err) {
 
-    }
+    })
 
     
 });
@@ -31,7 +31,7 @@ router.get("/items", function(req, res) {
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err) {
 
-    }
+    })
 
     
 });
@@ -44,7 +44,7 @@ router.post("/items", function(req, res) {
     VALUES (?, ?, ?, ?, ?)`,
     [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(err) {
         
-    }
+    })
 
 
 });
@@ -57,7 +57,7 @@ router.put("/items", function(req, res) {
     image=? WHERE id=?`,
     [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(err) {
 
-    }
+    })
 
 
 });
@@ -67,7 +67,7 @@ router.delete("/items", function(req, res) {
 
     db.run("DELETE FROM products WHERE id=" + id, function(err) {
 
-    }
+    })
 
 
 });
