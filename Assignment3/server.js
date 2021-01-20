@@ -13,19 +13,20 @@ app.use(bodyParser.json());
 //                                       ROUTERS                                                    //
 
 // GETTING ALL ITEMS
-router.get("/items", function(req, res) {
+router.get("/", function(req, res) {
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err) {
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err, rows) {
 
     })
-
     
 });
 
 // GETTING PARTICULAR ITEM WITH ID
-router.get("/items", function(req, res) {
+router.get("/:id", function(req, res) {
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err) {
+    let id = req.params.id;
+
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err, row) {
 
     })
 
@@ -33,12 +34,14 @@ router.get("/items", function(req, res) {
 });
 
 // POSTING ITEM 
-router.post("/items", function(req, res) {
+router.post("/", function(req, res) {
 
+    // Might be wrong
+    let item = req.body;
 
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image)
     VALUES (?, ?, ?, ?, ?)`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(err) {
+    [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(err, row) {
         
     })
 
@@ -46,12 +49,15 @@ router.post("/items", function(req, res) {
 });
 
 // UPDATING ITEM
-router.put("/items", function(req, res) {
+router.put("/", function(req, res) {
+
+    // Might be wrong
+    let item = req.body; 
 
     db.run(`UPDATE products
     SET product=?, origin=?, best_before_date=?, amount=?,
     image=? WHERE id=?`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(err) {
+    [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(err, row) {
 
     })
 
@@ -59,17 +65,20 @@ router.put("/items", function(req, res) {
 });
 
 // DELETING ITEM
-router.delete("/items", function(req, res) {
+router.delete("/:id", function(req, res) {
+
+    let id = req.params.id
 
     db.run("DELETE FROM products WHERE id=" + id, function(err) {
-
+        if (err) {
+            throw err;
+        }
     })
-
 
 });
 
 
-app.use("/api", router);
+app.use("/api/items", router);
 
 // ************************************************************************************************ //
 
@@ -82,7 +91,7 @@ console.log("Your Web server should be up and running, waiting for requests to c
 // INIT DATABASE
 function my_database(filename) {
     // Conncect to db by opening filename, create filename if it does not exist:
-    var db = new sqlite.Database(filename, (err) => {
+    let db = new sqlite.Database(filename, (err) => {
         if (err) {
             console.error(err.message);
         }
