@@ -13,63 +13,65 @@ app.use(bodyParser.json());
 //                                       ROUTERS                                                    //
 
 // GETTING ALL ITEMS
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function(err, rows) {
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function (err, rows) {
 
     })
-    
+
 });
 
 // GETTING PARTICULAR ITEM WITH ID
-router.get("/:id", function(req, res) {
+router.get("/:id", function (req, res) {
 
     let id = req.params.id;
 
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function(err, row) {
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function (err, row) {
 
     })
 
-    
+
 });
 
 // POSTING ITEM 
-router.post("/", function(req, res) {
+router.post("/", function (req, res) {
 
     // Might be wrong
     let item = req.body;
 
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image)
     VALUES (?, ?, ?, ?, ?)`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'],  item['image']], function(err, row) {
-        
-    })
+        [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image']],
+        function (err, row) {
+
+        })
 
 
 });
 
 // UPDATING ITEM
-router.put("/", function(req, res) {
+router.put("/", function (req, res) {
 
     // Might be wrong
-    let item = req.body; 
+    let item = req.body;
 
     db.run(`UPDATE products
     SET product=?, origin=?, best_before_date=?, amount=?,
     image=? WHERE id=?`,
-    [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']], function(err, row) {
+        [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']],
+        function (err, row) {
 
-    })
+        })
 
 
 });
 
 // DELETING ITEM
-router.delete("/:id", function(req, res) {
+router.delete("/:id", function (req, res) {
 
     let id = req.params.id
 
-    db.run("DELETE FROM products WHERE id=" + id, function(err) {
+    db.run("DELETE FROM products WHERE id=" + id, function (err) {
         if (err) {
             throw err;
         }
