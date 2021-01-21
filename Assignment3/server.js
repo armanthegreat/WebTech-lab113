@@ -102,7 +102,7 @@ router.delete("/:id", function (req, res) {
 });
 
 // RESET ITEM - doesn't work
-router.get("/reset", function (req, res) {
+router.delete("/reset", function (req, res) {
 
     console.log("Hitting it")
 
@@ -120,7 +120,7 @@ app.use("/api/items", router);
 
 // LISTENING ON PORT: 3000
 app.listen(3000);
-console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/api/items");
+console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/api/item");
 
 
 // INIT DATABASE
