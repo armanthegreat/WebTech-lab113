@@ -5,30 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1>RESTful API</h1>
+    <h1>API Documentation</h1>
+    <p> Our API is organized around REST. Our API has predictable resource-oriented URLs, 
+        accepts form-encoded request bodies,returns JSON-encoded responses, 
+        and uses standard HTTP response codes, authentication, and verbs. </p>
 </head>
 
 <body>
 
     <section>
         <h2>Create</h2>
-        <p class="short-description"></p>
-        <p>curl POST http://localhost:3000/api/items</p>
+        <p class="short-description"> The unique identifier that allows the user to add a new iteams to the 
+            database with the pramiters shown below.</p>
+        <p>POST http://localhost:3000/api/item </p>
         <p>
+            An example of a new product added to the database
             {
             "product": "Ananas",
             "origin": "Chile",
             "best_before_date": "January 2102",
             "amount": "230kg",
             "image":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"<br>
             }
         </p>
     </section>
 
     <section>
         <h2>Retrieve All items</h2>
-        <p class="short-description"></p>
+        <p class="short-description"> With the help of the this identifier you can retreive all the data from the database</p>
         <p>curl GET http://localhost:3000/api/items</p>
     </section>
 
@@ -55,4 +60,16 @@
     <section>
         <h2>Delete</h2>
         <p class="short-description"></p>
-        <p>curl DELETE http://localhost:3000/api/items/id=? <- check in other docs</p> </section> </body> </html>
+        <p>curl DELETE http://localhost:3000/api/items/id=? <- check in other docs</p> 
+    </section> 
+
+    <section>
+        <h2>STATUS CODE     DESCRIPTION</h2><p>
+        201	           Created - The request has been fulfilled and resulted in a new resource being created.
+        204	           No Content - The request has succeeded but returns no message body.            
+        400            Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
+        404	           Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.
+    </p>
+    </section>
+    </body> 
+    </html>
