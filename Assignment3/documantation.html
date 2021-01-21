@@ -1,32 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <h1>RESTful CRUD API</h1>
+    <h1>RESTful API</h1>
 </head>
+
 <body>
 
     <section>
-        <h2>Creat</h2>
-        <pre>          .........</pre>
+        <h2>Create</h2>
+        <p class="short-description"></p>
+        <p>curl POST http://localhost:3000/api/items</p>
+        <p>
+            {
+            "product": "Ananas",
+            "origin": "Chile",
+            "best_before_date": "January 2102",
+            "amount": "230kg",
+            "image":
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            }
+        </p>
     </section>
 
     <section>
-        <h2>Retrieve</h2>
-        <pre>          .........</pre>
+        <h2>Retrieve All items</h2>
+        <p class="short-description"></p>
+        <p>curl GET http://localhost:3000/api/items</p>
     </section>
 
     <section>
-        <h2>Update</h2>
-        <pre>          .........</pre>
+        <h2>Retrieve item</h2>
+        <p class="short-description"></p>
+        <p>curl GET http://localhost:3000/api/item/id=? <- check in other docs </p> </section> <section>
+                <h2>Update</h2>
+                <p class="short-description"></p>
+                <p>curl PUT http://localhost:3000/api/items</p>
+                <p>
+                    {
+                    "id": "2",
+                    "product": "Mango",
+                    "origin": "Sudan",
+                    "best_before_date": "January 1999",
+                    "amount": "230kg",
+                    "image":
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+                    }
+                </p>
     </section>
 
     <section>
         <h2>Delete</h2>
-        <pre>          .........</pre>
-    </section>
-    
-</body>
-</html>
+        <p class="short-description"></p>
+        <p>curl DELETE http://localhost:3000/api/items/id=? <- check in other docs</p> </section> </body> </html>
