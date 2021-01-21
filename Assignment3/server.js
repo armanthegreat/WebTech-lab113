@@ -6,11 +6,12 @@ const app = express();
 const router = express.Router();
 
 const bodyParser = require("body-parser");
-const {
-    json
-} = require('body-parser');
 app.use(bodyParser.json());
 
+//SETTING HEADER FOR ALL ROUTES - !!!!
+// app.use(res.set({
+//     "content-type": "application/json",
+// }));
 
 // ************************************************************************************************ //
 //                                       ROUTERS                                                    //
@@ -19,14 +20,12 @@ app.use(bodyParser.json());
 router.get("/", function (req, res) {
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function (err, rows) {
-        // check error handling with TA
         if (err) {
             res.status(400).send(err);
         } else {
             res.json(rows);
         }
     })
-
 });
 
 // GETTING PARTICULAR ITEM WITH ID
@@ -35,7 +34,6 @@ router.get("/:id", function (req, res) {
     let id = req.params.id;
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function (err, row) {
-        // check error handling with TA
         if (err) {
             res.status(400).send(err);
         } else if (JSON.stringify(row) == "[]") {
@@ -56,13 +54,12 @@ router.post("/", function (req, res) {
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image']],
         function (err, item) {
-            // check error handling with TA
             if (err) {
                 res.status(400).send(err);
             } else {
                 res.status(201).json(item);
+                // res.send(row);
             }
-            res.send(row);
         })
 });
 
@@ -71,12 +68,11 @@ router.put("/", function (req, res) {
 
     let item = req.body;
 
-    // is it fine if we require all items info to be requested with??? 
+    // is it fine if we require all items info to be requested with ??? 
     db.run(`UPDATE products SET product=?, origin=?, best_before_date=?, amount=?,mage=? WHERE id=?`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']],
         function (err, item) {
             if (err) console.log(err);
-            // check error handling with TA
             if (err) {
                 res.status(400).send(err);
             } else if (item.n === 0) {
@@ -94,7 +90,6 @@ router.delete("/:id", function (req, res) {
     let id = req.params.id
 
     db.run("DELETE FROM products WHERE id=" + id, function (err, item) {
-        // check error handling with TA
         if (err) {
             res.status(400).send(err);
         } else if (item.n === 0) {
@@ -111,11 +106,11 @@ router.get("/reset", function (req, res) {
 
     console.log("Hitting it")
 
-    db.run("DELETE FROM products", function (err) {
-        if (err) console.log(err);
-        // ERROR HANDLING
-        res.send("Table reset")
-    })
+    // db.run("DELETE  FROM products", function (err) {
+    //     if (err) console.log(err);
+    //     // ERROR HANDLING
+    //     // res.send("Table reset")
+    // })
 });
 
 app.use("/api/items", router);
@@ -125,7 +120,7 @@ app.use("/api/items", router);
 
 // LISTENING ON PORT: 3000
 app.listen(3000);
-console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/hello");
+console.log("Your Web server should be up and running, waiting for requests to come in. Try http://localhost:3000/api/items");
 
 
 // INIT DATABASE
