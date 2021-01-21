@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 //                                       ROUTERS                                                    //
 
 // GETTING ALL ITEMS
-router.get("/", function (req, res) {
+router.get("/items", function (req, res) {
 
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products", function (err, rows) {
         if (err) {
@@ -29,7 +29,7 @@ router.get("/", function (req, res) {
 });
 
 // GETTING PARTICULAR ITEM WITH ID
-router.get("/:id", function (req, res) {
+router.get("/items/:id", function (req, res) {
 
     let id = req.params.id;
 
@@ -45,7 +45,7 @@ router.get("/:id", function (req, res) {
 });
 
 // POSTING ITEM 
-router.post("/", function (req, res) {
+router.post("/items", function (req, res) {
 
     let item = req.body;
 
@@ -64,12 +64,12 @@ router.post("/", function (req, res) {
 });
 
 // UPDATING ITEM
-router.put("/", function (req, res) {
+router.put("/items", function (req, res) {
 
     let item = req.body;
 
     // is it fine if we require all items info to be requested with ??? 
-    db.run(`UPDATE products SET product=?, origin=?, best_before_date=?, amount=?,mage=? WHERE id=?`,
+    db.run(`UPDATE products SET product=?, origin=?, best_before_date=?, amount=?,image=? WHERE id=?`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], item['id']],
         function (err, item) {
             if (err) console.log(err);
@@ -85,12 +85,13 @@ router.put("/", function (req, res) {
 });
 
 // DELETING ITEM
-router.delete("/:id", function (req, res) {
+router.delete("/items/:id", function (req, res) {
 
     let id = req.params.id
 
-    db.run("DELETE FROM products WHERE id=" + id, function (err, item) {
+    db.run("DELETE FROM products WHERE id= ?", [id], function (err, item) {
         if (err) {
+            console.log(err);
             res.status(400).send(err);
         } else if (item.n === 0) {
             res.sendStatus(404);
@@ -106,14 +107,14 @@ router.delete("/reset", function (req, res) {
 
     console.log("Hitting it")
 
-    // db.run("DELETE  FROM products", function (err) {
-    //     if (err) console.log(err);
-    //     // ERROR HANDLING
-    //     // res.send("Table reset")
-    // })
+    db.run("DELETE  FROM products", function (err) {
+        if (err) console.log(err);
+        // ERROR HANDLING
+        res.send("Table reset")
+    })
 });
 
-app.use("/api/items", router);
+app.use("/api", router);
 
 // ************************************************************************************************ //
 
