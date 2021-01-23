@@ -110,7 +110,6 @@ router.delete("/", function (req, res) {
     db.run("DELETE  FROM products", function (err) {
         if (err) {
             res.status(400).send(err);
-            console.log(err);
         } else {
             res.sendStatus(204);
             my_database('./products.db');
