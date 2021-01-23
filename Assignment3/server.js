@@ -25,9 +25,6 @@ router.post("/", function (req, res) {
 
     let item = req.body;
 
-    // dealing with response of URI of item
-    let fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
-
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image']],
         function (err, item) {
@@ -35,9 +32,6 @@ router.post("/", function (req, res) {
                 res.status(400).send(err);
             } else {
                 res.status(201).json(item);
-                // res.send(row);
-                // might want to respond to the URI of the new item
-                console.log(fullUrl);
             }
         })
 });
@@ -50,10 +44,10 @@ router.get("/:id", function (req, res) {
     db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function (err, row) {
         if (err) {
             res.status(400).send(err);
-        } else if (JSON.stringify(row) == "[]") {
+        } else if (JSON.stringify(row) === "[]") {
             res.status(404).send(err)
         } else {
-            res.json(row);
+            res.status(200).json(row);
         }
     })
 });
@@ -65,7 +59,7 @@ router.get("/", function (req, res) {
         if (err) {
             res.status(400).send(err);
         } else {
-            res.json(rows);
+            res.status(200).json(rows);
         }
     })
 });
@@ -75,20 +69,28 @@ router.put("/:id", function (req, res) {
 
     let item = req.body;
     let id = req.params.id;
+    let sqlUpdate = "UPDATE products";
+
+    let itemAttributes = ["product", "origin", "best_before_date", "amount", "image"];
+
+    for (attribute in itemAttributes) {
+        if (item[attribute]) {
+            console.log("1");
+        }
+    }
 
     // every field is required because of db function parametars
     db.run(`UPDATE products SET product=?, origin=?, best_before_date=?, amount=?,image=? WHERE id=?`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], id],
         function (err, item) {
-            if (err) console.log(err);
             if (err) {
                 res.status(400).send(err);
             } else {
-                res.sendStatus(204);
-                //  Might want to respond with the URI of updated item
+                res.status(204).json(item);
             }
-        })
+        })   
 });
+
 
 // Delete (single item)
 router.delete("/:id", function (req, res) {
