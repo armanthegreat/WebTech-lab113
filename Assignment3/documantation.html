@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <h1>API Documentation</h1>
-    <p> Our API is organized around REST. Our API has predictable resource-oriented URLs, 
-        accepts form-encoded request bodies,returns JSON-encoded responses, 
+    <p> Our API is organized around REST. Our API has predictable resource-oriented URLs,
+        accepts form-encoded request bodies,returns JSON-encoded responses,
         and uses standard HTTP response codes, authentication, and verbs. </p>
 </head>
 
@@ -15,114 +15,124 @@
 
     <section add item>
         <h2>Create</h2>
-            <p> The unique identifier that allows the user to add a new iteams to the 
-                 database with the pramiters shown below.</p>
+        <p> The unique identifier that allows the user to add a new iteams to the
+            database with the pramiters shown below.</p>
 
         <p>POST http://localhost:3000/api/item </p>
         <p>
-            An example of the response sent by the server to the following identifier  :
-                {
-                "id": 2,
-                "product": "Mango",
-                "origin": "Sudan",
-                "best_before_date": "January 1999",
-                "amount": "230kg",
-                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-                }
+            An example of the response sent by the server to the following identifier :
+            {
+            "id": 2,
+            "product": "Mango",
+            "origin": "Sudan",
+            "best_before_date": "January 1999",
+            "amount": "230kg",
+            "image":
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            }
 
-            If the identifier fails to add the new item into the database it would respond with a sataus code (400) 
-            If the identifier succesfully adds the new item into the database it would respond with a status code (200)    
-            </p>
+            If the identifier fails to add the new item into the database it would respond with a sataus code (400)
+            If the identifier succesfully adds the new item into the database it would respond with a status code (200)
+        </p>
     </section>
 
     <section all data>
         <h2>Retrieve All items</h2>
-        <p class="short-description"> With the help of the this identifier you can retreive all the data from the database and view them </p>
-        <p>curl GET http://localhost:3000/api/items</p>
-            <p>An example of the response sent by the server to the this specific identifier  :
-                {
-                    "id": 1,
-                    "product": "banana",
-                    "origin": "The Netherlands",
-                    "best_before_date": "November 2019",
-                    "amount": "100kg",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
-                },
-                {
-                    "id": 2,
-                    "product": "Mango",
-                    "origin": "Sudan",
-                    "best_before_date": "January 1999",
-                    "amount": "230kg",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-                }
+        <p class="short-description"> With the help of the this identifier you can retreive all the data from the
+            database and view them </p>
+        <p>GET http://localhost:3000/api/items</p>
+        <p>An example of the response sent by the server to the this specific identifier :
+            {
+            "id": 1,
+            "product": "banana",
+            "origin": "The Netherlands",
+            "best_before_date": "November 2019",
+            "amount": "100kg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
+            },
+            {
+            "id": 2,
+            "product": "Mango",
+            "origin": "Sudan",
+            "best_before_date": "January 1999",
+            "amount": "230kg",
+            "image":
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            }
 
-        <!-- If the identifier fails to locate any iteams in the database (when the datatbse is empty) it would respond with a sataus code (400)  -->
+            <!-- If the identifier fails to locate any iteams in the database (when the datatbse is empty) it would respond with a sataus code (400)  -->
         </p>
     </section>
 
     <section (get id)>
         <h2>Retrieve item</h2>
-        <p>To get a specific iteam from the database the following identifier would help to retrieve a single iteam based on its unique id </p>
-        <p>curl GET http://localhost:3000/api/item/id=? </p>
-            <p>An example of the response sent to the server and the response : http://localhost:3000/api/item/1
-                {
-                    "id": 1,
-                    "product": "banana",
-                    "origin": "The Netherlands",
-                    "best_before_date": "November 2019",
-                    "amount": "100kg",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
-                }
+        <p>To get a specific iteam from the database the following identifier would help to retrieve a single iteam
+            based on its unique id </p>
+        <p>GET http://localhost:3000/api/item/id=? </p>
+        <p>An example of the response sent to the server and the response : http://localhost:3000/api/item/1
+            {
+            "id": 1,
+            "product": "banana",
+            "origin": "The Netherlands",
+            "best_before_date": "November 2019",
+            "amount": "100kg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
+            }
 
-                <!-- If the identifier fails to add the new item into the database it would respond with a sataus code (400)  -->
+            <!-- If the identifier fails to add the new item into the database it would respond with a sataus code (400)  -->
 
 
-    </section> 
+    </section>
 
     <section update>
-                <h2>Update</h2>
-                <p> To be able to update an iteam in the database the following identifier would acess a specific id and update its fields  </p>
-                <p>curl PUT http://localhost:3000/api/items</p>
-                <p>
-                    An example of the request sent to the server :
-                    {
-                    "id": "2",
-                    "product": "Mango",
-                    "origin": "Sudan",
-                    "best_before_date": "January 1999",
-                    "amount": "230kg",
-                    "image":
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-                    }
-                </p>
+        <h2>Update</h2>
+        <p> To be able to update an iteam in the database the following identifier would acess a specific id and update
+            its fields </p>
+        <p>curl PUT http://localhost:3000/api/items</p>
+        <p>
+            An example of the request sent to the server :
+            {
+            "id": "2",
+            "product": "Mango",
+            "origin": "Sudan",
+            "best_before_date": "January 1999",
+            "amount": "230kg",
+            "image":
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            }
+        </p>
     </section>
 
     <section delete>
         <h2>Delete</h2>
         <p>To remove a specific iteam from the databse we need to use the following identifier to be able to do so.</p>
-        <p>curl DELETE http://localhost:3000/api/items/id=?</p> 
-            <p>
-                An example of the request sent to the server and the response : curl DELETE http://localhost:3000/api/items/id=1 
+        <p>DELETE http://localhost:3000/api/items/id=?</p>
+        <p>
+            An example of the request sent to the server and the response : curl DELETE
+            http://localhost:3000/api/items/id=1
 
-    </section> 
+    </section>
 
     <section reset>
         <h2>Reset</h2>
-        <p>To remove every data in the table and reset it we could use the following identifier and empty out the database</p>
-        <p>curl DELETE http://localhost:3000/api/reset</p> 
-            <p>
-                An example of the response sent to the server and the response : curl DELETE http://localhost:3000/api/items/id=1 
+        <p>To remove every data in the table and reset it we could use the following identifier and empty out the
+            database</p>
+        <p>DELETE http://localhost:3000/api/items</p>
+        <p>
+            An example of the response sent to the server and the response : DELETE http://localhost:3000/api/items/id=1
 
-    </section> 
+    </section>
 
     <section status code>
-    <p>STATUS CODE     DESCRIPTION
-        201	           Created - The request has been fulfilled and resulted in a new resource being created.
-        204	           No Content - The request has succeeded but returns no message body.            
-        400            Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
-        404	           Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.
-    </p>
+        <p>STATUS CODE DESCRIPTION
+            201 Created - The request has been fulfilled and resulted in a new resource being created.
+            204 No Content - The request has succeeded but returns no message body.
+            400 Bad Request - The server cannot or will not process the request due to something that is perceived to be
+            a client error.
+            404 Not Found - The requested resource could not be found. This error can be due to a temporary or permanent
+            condition.
+        </p>
     </section>
-    </body> 
-    </html>
+</body>
+
+</html>
