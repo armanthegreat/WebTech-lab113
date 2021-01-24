@@ -16,31 +16,33 @@
     }
   </style>
 
-  <h1 class="blockquote text-center">API Documentation</h1>
+  <h1 class="text-center display-2" >API Documentation</h1>
 
   <p> Our API is organized around REST. Our API has predictable resource-oriented URLs,
     accepts form-encoded request bodies, returns JSON-encoded responses,
     and uses standard HTTP response codes and verbs. </p>
 
-  <section class="Create">
-    <h2>Create</h2>
+  <section class="container">
+    <h2>CREATE</h2>
 
     <p> The unique identifier that allows the user to add a new item to the
       database with the pramiters shown below.</p>
 
     <p>POST http://localhost:3000/api/item </p>
 
-    <p>An example of the request sent to the server:
+    <p>An example of the request sent to the server:</p>
+
+    <pre>
       {
-      "id": 2,
-      "product": "Avocado",
-      "origin": "Mexico",
-      "best_before_date": "January 2021",
-      "amount": "230kg",
-      "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+        "id": 2,
+        "product": "Avocado",
+        "origin": "Mexico",
+        "best_before_date": "January 2021",
+        "amount": "230kg",
+        "image":
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
       }
-    </p>
+    </pre>
 
     <table class="table">
       <thead class="thead-dark">
@@ -69,8 +71,10 @@
 
   </section>
 
-  <section class="GET">
-    <h2>Read</h2>
+  <hr>
+
+  <section class="container">
+    <h2>READ</h2>
 
     <p> With the help of the this identifier you can retreive every item from the
       database or just retrieve one item by adding the id of the item to URI</p>
@@ -81,25 +85,27 @@
     <p>To get a specific data with ID:</p>
     <p>GET http://localhost:3000/api/items/id=?</p>
 
-    <p>An example of the response sent by the database :
+    <p>An example of the response sent by the database:</p>
+
+    <pre>
+      [{
+        "id": 1,
+        "product": "banana",
+        "origin": "The Netherlands",
+        "best_before_date": "November 2019",
+        "amount": "100kg",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
+      }, 
       {
-      "id": 1,
-      "product": "banana",
-      "origin": "The Netherlands",
-      "best_before_date": "November 2019",
-      "amount": "100kg",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
-      },
-      {
-      "id": 2,
-      "product": "Mango",
-      "origin": "Sudan",
-      "best_before_date": "January 1999",
-      "amount": "230kg",
-      "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-      }
-    </p>
+        "id": 2,
+        "product": "Mango",
+        "origin": "Sudan",
+        "best_before_date": "January 1999",
+        "amount": "230kg",
+        "image":
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+      }]
+    </pre>
 
     <table class="table">
       <thead class="thead-dark">
@@ -128,29 +134,29 @@
 
   </section>
 
+  <hr>
 
-  <section class="Update">
-    <h2>Update</h2>
+  <section class="container">
+    <h2>UPDATE</h2>
 
     <p> To be able to update any specification of an item in the database the following identifier would acaccess a
       product through its specific id and update
       its fields.</p>
     <p>PUT http://localhost:3000/api/items</p>
 
-    <p>
-      An example of the request sent to the database :
-      {
-      "id": "2",
-      "product": "Mango",
-      "origin": "Sudan",
-      "best_before_date": "January 1999",
-      "amount": "230kg",
-      "image":
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-      }
+    <p>An example of the request sent to the database:</p>
 
-      The response of the server depending on your request :
-    </p>
+    <pre>
+      {
+        "id": "2",
+        "product": "Mango",
+        "origin": "Sudan",
+        "best_before_date": "January 1999",
+        "amount": "230kg",
+        "image":
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+      }
+    </pre>
 
     <table class="table">
       <thead class="thead-dark">
@@ -179,8 +185,10 @@
 
   </section>
 
-  <section class="Delete">
-    <h2>Delete</h2>
+  <hr>
+
+  <section class="container">
+    <h2>DELETE</h2>
 
     <p>The following identifier has the ability to reset the entire database, it also could also just delete a single
       item in the database by adding the items id to the URI.</p>
