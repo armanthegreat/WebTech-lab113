@@ -13,24 +13,25 @@
 
 <body>
 
-    <section add item>
+    <section id="add item">
         <h2>Create</h2>
         <p> The unique identifier that allows the user to add a new items to the
             database with the pramiters shown below.</p>
 
-        <p>POST http://localhost:3000/api/item </p>
+        <p><strong>curl POST http://localhost:3000/api/item</strong> </p>
 
-        <p>An example of the request sent to the databse : 
-            {
-            "id": 2,
-            "product": "Mango",
-            "origin": "Sudan",
-            "best_before_date": "January 1999",
-            "amount": "230kg",
-            "image":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+        <p>An example of the request sent to the databse : <br>
+            {<br>
+            "id": 2,<br>
+            "product": "Mango",<br>
+            "origin": "Sudan",<br>
+            "best_before_date": "January 1999",<br>
+            "amount": "230kg",<br>
+            "image":<br>
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"<br>
             }
-
+        </p>
+        <p>
             The response of the server depending on your request :
             <table class="SC">
                 <tr>
@@ -53,34 +54,35 @@
         </p>
     </section>
 
-    <section get>
-        <h2>retrieving items</h2>
+    <section id="get">
+        <h2>Retrieving items</h2>
 
         <p> With the help of the this identifier you can retreive every item from the
             database or just retrieve one item by adding the id of the item to URI</p>
 
-        <p>To get every data :</p><p>GET http://localhost:3000/api/items</p>
-        <p>To get a specific data :</p><p>GET http://localhost:3000/api/items/id=?</p>
+        <p>To get every data : <strong> curl GET http://localhost:3000/api/items</strong></p>
+        <p>To get a specific data : <strong> curl GET http://localhost:3000/api/items/id=?</strong></p>
 
-        <p>An example of the response sent by the database :
-            {
-            "id": 1,
-            "product": "banana",
-            "origin": "The Netherlands",
-            "best_before_date": "November 2019",
-            "amount": "100kg",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
-            },
-            {
-            "id": 2,
-            "product": "Mango",
-            "origin": "Sudan",
-            "best_before_date": "January 1999",
-            "amount": "230kg",
+        <p>An example of the response sent by the database :<br>
+            {<br>
+            "id": 1,<br>
+            "product": "banana",<br>
+            "origin": "The Netherlands",<br>
+            "best_before_date": "November 2019",<br>
+            "amount": "100kg",<br>
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"<br>
+            },<br>
+            {<br>
+            "id": 2,<br>
+            "product": "Mango",<br>
+            "origin": "Sudan",<br>
+            "best_before_date": "January 1999",<br>
+            "amount": "230kg",<br>
             "image":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
-            }
-
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"<br>
+            }<br>
+        </p>
+        <p>
             The responses of the server depending on your request :
             <table class="SC">
                 <tr>
@@ -108,19 +110,20 @@
         <h2>Update</h2>
         <p> To be able to update any specification of an item in the database the following identifier would acaccess a product through its specific id and update
             its fields.</p>
-        <p>curl PUT http://localhost:3000/api/items</p>
+        <p><strong> curl PUT http://localhost:3000/api/items</strong> </p>
         <p>
-            An example of the request sent to the database :
-            {
-            "id": "2",
-            "product": "Mango",
-            "origin": "Sudan",
-            "best_before_date": "January 1999",
-            "amount": "230kg",
+            An example of the request sent to the database :<br>
+            {<br>
+            "id": "2",<br>
+            "product": "Mango",<br>
+            "origin": "Sudan",<br>
+            "best_before_date": "January 1999",<br>
+            "amount": "230kg",<br>
             "image":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"<br>
             }
-
+        </p>
+        <p>
             The response of the server depending on your request :
             <table class="SC">
                 <tr>
@@ -145,10 +148,10 @@
 
     <section delete>
         <h2>Delete</h2>
-        <p>The following identifier has the ability to reset the entire database, it also could also just delete a single item in the database by adding the items id to the URI.
-            <p>To reset the whole databse </p><p>DELETE http://localhost:3000/api/items</p>    
-            <p>To Delete a single item </p><p>DELETE http://localhost:3000/api/items/id=?</p>
-
+        <p>The following identifier has the ability to reset the entire database, it also could also just delete a single item in the database by adding the items id to the URI.</p>
+            <p>To reset the whole databse :<strong>curl DELETE http://localhost:3000/api/items</strong> </p>    
+            <p>To Delete a single item : <strong> curl DELETE http://localhost:3000/api/items/id=? </strong> </p>
+          <p>
             The response of the server depending on your request :
             <table class="SC">
                 <tr>
