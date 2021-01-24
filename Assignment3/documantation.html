@@ -15,12 +15,12 @@
 
     <section add item>
         <h2>Create</h2>
-        <p> The unique identifier that allows the user to add a new iteams to the
+        <p> The unique identifier that allows the user to add a new items to the
             database with the pramiters shown below.</p>
 
         <p>POST http://localhost:3000/api/item </p>
-        <p>
-            An example of the response sent by the server to the following identifier :
+
+        <p>An example of the request sent to the databse : 
             {
             "id": 2,
             "product": "Mango",
@@ -31,17 +31,22 @@
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
             }
 
-            If the identifier fails to add the new item into the database it would respond with a sataus code (400)
-            If the identifier succesfully adds the new item into the database it would respond with a status code (200)
+            The response of the server depending on your request :
+                400 - Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
+                201 - Created - The request has been fulfilled and resulted in a new resource being created.
         </p>
     </section>
 
     <section get>
-        <h2>Retrieve All items</h2>
-        <p class="short-description"> With the help of the this identifier you can retreive all the data from the
-            database and view them </p>
-        <p>GET http://localhost:3000/api/items</p>
-        <p>An example of the response sent by the server to the this specific identifier :
+        <h2>retrieving items</h2>
+
+        <p> With the help of the this identifier you can retreive every item from the
+            database or just retrieve one item by adding the id of the item to URI</p>
+
+        <p>To get every data :</p><p>GET http://localhost:3000/api/items</p>
+        <p>To get a specific data :</p><p>GET http://localhost:3000/api/items/id=?</p>
+
+        <p>An example of the response sent by the database :
             {
             "id": 1,
             "product": "banana",
@@ -60,37 +65,21 @@
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
             }
 
-            <!-- If the identifier fails to locate any iteams in the database (when the datatbse is empty) it would respond with a sataus code (400)  -->
+            The responses of the server depending on your request :
+                400 - Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
+                404 - Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.
+                200 - Ok - The request has successfully been executed.
         </p>
     </section>
+   
 
-    <!-- <section (get id)>
-        <h2>Retrieve item</h2>
-        <p>To get a specific iteam from the database the following identifier would help to retrieve a single iteam
-            based on its unique id </p>
-        <p>GET http://localhost:3000/api/item/id=? </p>
-        <p>An example of the response sent to the server and the response : http://localhost:3000/api/item/1
-            {
-            "id": 1,
-            "product": "banana",
-            "origin": "The Netherlands",
-            "best_before_date": "November 2019",
-            "amount": "100kg",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"
-            }
-
-            <!-- If the identifier fails to add the new item into the database it would respond with a sataus code (400)  -->
-
-
-    </section> -->
-
-    <section update>
+    <section id= "update">
         <h2>Update</h2>
-        <p> To be able to update an iteam in the database the following identifier would acess a specific id and update
-            its fields </p>
+        <p> To be able to update any specification of an item in the database the following identifier would acaccess a product through its specific id and update
+            its fields.</p>
         <p>curl PUT http://localhost:3000/api/items</p>
         <p>
-            An example of the request sent to the server :
+            An example of the request sent to the database :
             {
             "id": "2",
             "product": "Mango",
@@ -100,27 +89,23 @@
             "image":
             "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Bananas_white_background_DS.jpg/1280px-Bananas_white_background_DS.jpg"
             }
+
+            The response of the server depending on your request :
+                400 - Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
+                404 - Not Found - The requested resource could not be found. This error can be due to a temporary or permanent condition.
+                204 - No Content - The request has succeeded but returns no message body.
         </p>
     </section>
 
     <section delete>
         <h2>Delete</h2>
-        <p>To remove a specific iteam from the databse we need to use the following identifier to be able to do so. Either can single item be removed, or excluding item id in URI will result in database reset.</p>
-        <p>DELETE http://localhost:3000/api/items/id=?</p>
-        <p>
-            An example of the request sent to the server and the response : curl DELETE
-            http://localhost:3000/api/items/id=1
+        <p>The following identifier has the ability to reset the entire database, it also could also just delete a single item in the database by adding the items id to the URI.
+            <p>To reset the whole databse </p><p>DELETE http://localhost:3000/api/items</p>    
+            <p>To Delete a single item </p><p>DELETE http://localhost:3000/api/items/id=?</p>
 
-    </section>
-
-    <section status code>
-        <p>STATUS CODE DESCRIPTION
-            201 Created - The request has been fulfilled and resulted in a new resource being created.
-            204 No Content - The request has succeeded but returns no message body.
-            400 Bad Request - The server cannot or will not process the request due to something that is perceived to be
-            a client error.
-            404 Not Found - The requested resource could not be found. This error can be due to a temporary or permanent
-            condition.
+            The response of the server depending on your request :
+                400 - Bad Request - The server cannot or will not process the request due to something that is perceived to be a client error.
+                204 - No Content - The request has succeeded but returns no message body.
         </p>
     </section>
 </body>
