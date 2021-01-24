@@ -36,7 +36,7 @@
         </p>
     </section>
 
-    <section all data>
+    <section get>
         <h2>Retrieve All items</h2>
         <p class="short-description"> With the help of the this identifier you can retreive all the data from the
             database and view them </p>
@@ -64,7 +64,7 @@
         </p>
     </section>
 
-    <section (get id)>
+    <!-- <section (get id)>
         <h2>Retrieve item</h2>
         <p>To get a specific iteam from the database the following identifier would help to retrieve a single iteam
             based on its unique id </p>
@@ -82,7 +82,7 @@
             <!-- If the identifier fails to add the new item into the database it would respond with a sataus code (400)  -->
 
 
-    </section>
+    </section> -->
 
     <section update>
         <h2>Update</h2>
@@ -105,21 +105,11 @@
 
     <section delete>
         <h2>Delete</h2>
-        <p>To remove a specific iteam from the databse we need to use the following identifier to be able to do so.</p>
+        <p>To remove a specific iteam from the databse we need to use the following identifier to be able to do so. Either can single item be removed, or excluding item id in URI will result in database reset.</p>
         <p>DELETE http://localhost:3000/api/items/id=?</p>
         <p>
             An example of the request sent to the server and the response : curl DELETE
             http://localhost:3000/api/items/id=1
-
-    </section>
-
-    <section reset>
-        <h2>Reset</h2>
-        <p>To remove every data in the table and reset it we could use the following identifier and empty out the
-            database</p>
-        <p>DELETE http://localhost:3000/api/items</p>
-        <p>
-            An example of the response sent to the server and the response : DELETE http://localhost:3000/api/items/id=1
 
     </section>
 
