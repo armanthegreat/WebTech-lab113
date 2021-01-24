@@ -12,13 +12,13 @@ app.use(bodyParser.json());
 //                                       ROUTERS                                                    //
 
 //HTTP Header (middleware)
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.set({
         "content-type": "application/json",
         "allow": "POST GET PUT DELETE"
     });
-     next();
- })
+    next();
+})
 
 // Create
 router.post("/", function (req, res) {
@@ -69,28 +69,39 @@ router.put("/:id", function (req, res) {
 
     let item = req.body;
     let id = req.params.id;
-    let sqlUpdate = "UPDATE products";
-
+    let sqlUpdate = "UPDATE products SET ";
+    
+    let updatedProducts = [];
     let itemAttributes = ["product", "origin", "best_before_date", "amount", "image"];
 
-    for (attribute in itemAttributes) {
+    itemAttributes.forEach(attribute => {
         if (item[attribute]) {
-            console.log("1");
-        }
-    }
-
-    // every field is required because of db function parametars
-    db.run(`UPDATE products SET product=?, origin=?, best_before_date=?, amount=?,image=? WHERE id=?`,
-        [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image'], id],
-        function (err, item) {
-            if (err) {
-                res.status(400).send(err);
+            if (sqlUpdate === "UPDATE products SET ") {
+                sqlUpdate += `${attribute}=?`;
+                updatedProducts.push(item[attribute]);
             } else {
-                res.status(204).json(item);
+                sqlUpdate += `, ${attribute}=?`;
+                updatedProducts.push(item[attribute]);
             }
-        })   
-});
+        }
+    });
 
+    db.all("SELECT product FROM products WHERE id=" + id, function (err, row) {
+        if (err) {
+            res.status(400).send(err);
+        } else if (JSON.stringify(row) === "[]") {
+            res.status(404).send(err);
+        } else {
+            db.run(sqlUpdate, updatedProducts, function (err, item) {
+                if (err) {
+                    res.status(400).send(err);
+                } else {
+                    res.status(204).json(item);
+                }
+            })
+        }
+    })
+});
 
 // Delete (single item)
 router.delete("/:id", function (req, res) {
@@ -155,9 +166,9 @@ function my_database(filename) {
                 // Generates first item in the products table
                 db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`,
                     ["Apples", "The Netherlands", "November 2019", "100kg", "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Apples.jpg/512px-Apples.jpg"]);
-                // console.log('Inserted dummy Apples entry into empty product database');
+                console.log('Inserted dummy Apples entry into empty product database');
             } else {
-                // console.log("Database already contains", result[0].count, " item(s) at startup.");
+                console.log("Database already contains", result[0].count, " item(s) at startup.");
             }
         });
     });
