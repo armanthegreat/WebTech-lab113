@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
     res.set({
         "content-type": "application/json",
-        "allow": "POST GET PUT DELETE"
+        "allow": "POST, GET, PUT, DELETE"
     });
     next();
 })
