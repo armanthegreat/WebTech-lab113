@@ -39,9 +39,7 @@ router.post("/", function (req, res) {
 // Read (single item)
 router.get("/:id", function (req, res) {
 
-    let id = req.params.id;
-
-    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + id, function (err, row) {
+    db.all("SELECT id, product, origin, best_before_date, amount, image FROM products WHERE id=" + req.params.id, function (err, row) {
         if (err) {
             res.status(400).send(err);
         } else if (JSON.stringify(row) === "[]") {
