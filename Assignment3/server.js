@@ -31,7 +31,7 @@ router.post("/", function (req, res) {
             if (err) {
                 res.status(400).send(err);
             } else {
-                res.status(201).json(item);
+                res.status(201);
             }
         })
 });
@@ -70,7 +70,7 @@ router.put("/:id", function (req, res) {
     let item = req.body;
     let id = req.params.id;
     let sqlUpdate = "UPDATE products SET ";
-    
+
     let updatedProducts = [];
     let itemAttributes = ["product", "origin", "best_before_date", "amount", "image"];
 
@@ -96,7 +96,7 @@ router.put("/:id", function (req, res) {
                 if (err) {
                     res.status(400).send(err);
                 } else {
-                    res.status(204).json(item);
+                    res.status(204);
                 }
             })
         }
