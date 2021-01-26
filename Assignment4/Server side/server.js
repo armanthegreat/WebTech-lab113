@@ -6,10 +6,12 @@ const app = express();
 const router = express.Router();
 
 let cors = require('cors');
-app.use(cors())
+app.use(cors());
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
+
+let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // ************************************************************************************************ //
 //                                       ROUTERS                                                    //
@@ -24,17 +26,17 @@ app.use(function (req, res, next) {
 })
 
 // Create
-router.post("/", function (req, res) {
+router.post("/", urlencodedParser,function (req, res) {
 
     let item = req.body;
 
     db.run(`INSERT INTO products (product, origin, best_before_date, amount, image) VALUES (?, ?, ?, ?, ?)`,
         [item['product'], item['origin'], item['best_before_date'], item['amount'], item['image']],
-        function (err, item) {
+        function (err) {
             if (err) {
                 res.status(400).send(err);
             } else {
-                res.status(201);
+                res.sendStatus(201);
             }
         })
 });

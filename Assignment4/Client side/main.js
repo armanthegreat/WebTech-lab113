@@ -69,41 +69,6 @@ $(document).ready(function () {
     //     });
     // }
 
-
-    // 4.SINGLE PAGE FORM SUBMIT
-    topSellingItemForm.submit(function (e) {
-        e.preventDefault();
-
-        let formContent = topSellingItemForm.serializeArray();
-        let newProduct = {}
-
-        formContent.forEach(element => {
-            newProduct[element.name] = element.value;
-        });
-
-        console.log(newProduct);
-
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:3000/api/items",
-            data: newProduct,
-            dataType: "application/json",
-            success: function (data) {
-                // ADDING ITEM TO TABLE FROM RESPONSE 
-                $.ajax({
-                    type: "get",
-                    url: data.URI,
-                    data: "data",
-                    dataType: "JSON",
-                    success: function (response) {
-                        topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
-                    }
-                });
-            }
-        });
-        // console.log(topSellingItemForm.serializeArray());
-    });
-
     // Assignemnt 4
     // BONUS PART:
     // 1.LOADING DYNAMICLY TABLE CONTENT FROM LOCALHOST SERVER
@@ -131,6 +96,37 @@ $(document).ready(function () {
                 topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
                 // ADD ITEMS FROM DB AFTER RESET
                 loadDataToTable();
+            }
+        });
+    });
+
+    // 3.SINGLE PAGE FORM SUBMIT
+    topSellingItemForm.submit(function (e) {
+        e.preventDefault();
+
+        let formContent = topSellingItemForm.serializeArray();
+        let newProduct = {}
+
+        formContent.forEach(element => {
+           newProduct[element.name] = element.value;
+        });
+
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:3000/api/items",
+            data: newProduct,
+            dataType: "json",
+            success: function (data) {
+                // ADDING ITEM TO TABLE FROM RESPONSE 
+                $.ajax({
+                    type: "get",
+                    url: data.URI,
+                    data: "data",
+                    dataType: "JSON",
+                    success: function (response) {
+                        topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
+                    }
+                });
             }
         });
     });
