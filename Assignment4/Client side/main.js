@@ -108,7 +108,7 @@ $(document).ready(function () {
         let newProduct = {}
 
         formContent.forEach(element => {
-           newProduct[element.name] = element.value;
+            newProduct[element.name] = element.value;
         });
 
         $.ajax({
@@ -133,8 +133,7 @@ $(document).ready(function () {
 
     $(".del").click(function () {
         console.log("delete triggered")
-      })
+    })
 
     loadDataToTable()
 });
-
