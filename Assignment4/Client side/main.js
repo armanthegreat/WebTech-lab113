@@ -39,27 +39,19 @@ $(document).ready(function () {
 
 
     // 2.RESET BUTTON
-    $(".reset_database").click(function () {
-        $.ajax({
-            type: "delete",
-            url: "http://localhost:3000/api/items",
-            dataType: "json",
-            success: function () {
-                // THE DELETE PART IS LINKED NEED TO DO THE RETRIVING PART
-
-                // ADDING ITEM TO TABLE FROM RESPONSE 
-                // $.ajax({
-                //     type: "get",
-                //     url: "http://localhost:3000/api/items",                   
-                //      data: "data",
-                //     dataType: "JSON",
-                //     success: function (response) {
-                //         topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
-                //     }
-                // });
-            }
-        });
-    });
+    // $(".reset_database").click(function () {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
+    //         dataType: "json",
+    //         success: function (response) {
+    //             // DELETE EVERYTHING FROM TABLE
+    //             topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
+    //             // ADD ITEMS FROM DB AFTER RESET
+    //             loadDataToTable();
+    //         }
+    //     });
+    // });
 
 
     // 3.DYNAMIC TABLE CONTENT
@@ -82,10 +74,20 @@ $(document).ready(function () {
     topSellingItemForm.submit(function (e) {
         e.preventDefault();
 
+        let formContent = topSellingItemForm.serializeArray();
+        let newProduct = {}
+
+        formContent.forEach(element => {
+            newProduct[element.name] = element.value;
+        });
+
+        console.log(newProduct);
+
         $.ajax({
-            type: "post",
+            type: "POST",
             url: "http://localhost:3000/api/items",
-            data: topSellingItemForm.serialize(),
+            data: newProduct,
+            dataType: "application/json",
             success: function (data) {
                 // ADDING ITEM TO TABLE FROM RESPONSE 
                 $.ajax({
@@ -99,6 +101,7 @@ $(document).ready(function () {
                 });
             }
         });
+        // console.log(topSellingItemForm.serializeArray());
     });
 
     // Assignemnt 4
@@ -117,7 +120,24 @@ $(document).ready(function () {
             }
         });
     }
+    // 2.RESET BUTTON
+    $(".reset_database").click(function () {
+        $.ajax({
+            type: "delete",
+            url: "http://localhost:3000/api/items",
+            dataType: "json",
+            success: function (response) {
+                // DELETE EVERYTHING FROM TABLE
+                topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
+                // ADD ITEMS FROM DB AFTER RESET
+                loadDataToTable();
+            }
+        });
+    });
 
+    $(".del").click(function () {
+        console.log("delete triggered")
+      })
 
     loadDataToTable()
 });
