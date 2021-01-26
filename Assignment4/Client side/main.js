@@ -55,19 +55,19 @@ $(document).ready(function () {
 
 
     // 3.DYNAMIC TABLE CONTENT
-    function loadDataToTable() {
-        $.ajax({
-            type: "get",
-            url: "https://wt.ops.labs.vu.nl/api21/e532098f",
-            data: "data",
-            dataType: "JSON",
-            success: function (response) {
-                for (let item in response) {
-                    topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
-                }
-            }
-        });
-    }
+    // function loadDataToTable() {
+    //     $.ajax({
+    //         type: "get",
+    //         url: "https://wt.ops.labs.vu.nl/api21/e532098f",
+    //         data: "data",
+    //         dataType: "JSON",
+    //         success: function (response) {
+    //             for (let item in response) {
+    //                 topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
+    //             }
+    //         }
+    //     });
+    // }
 
 
     // 4.SINGLE PAGE FORM SUBMIT
@@ -95,3 +95,21 @@ $(document).ready(function () {
 
     loadDataToTable()
 });
+
+// Assignemnt 4
+
+// BONUS PART:
+// 1.LOADING DYNAMICLY TABLE CONTENT FROM LOCALHOST SERVER
+function loadDataToTable() {
+    $.ajax({
+        type: "get",
+        url: "http://localhost:3000/api/items",
+        data: "data",
+        dataType: "JSON",
+        success: function (response) {
+            for (let item in response) {
+                topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
+            }
+        }
+    });
+}
