@@ -11,7 +11,9 @@ app.use(cors());
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-let urlencodedParser = bodyParser.urlencoded({ extended: false })
+let urlencodedParser = bodyParser.urlencoded({
+    extended: false
+})
 
 // ************************************************************************************************ //
 //                                       ROUTERS                                                    //
@@ -26,7 +28,7 @@ app.use(function (req, res, next) {
 })
 
 // Create
-router.post("/", urlencodedParser,function (req, res) {
+router.post("/", urlencodedParser, function (req, res) {
 
     let item = req.body;
 
@@ -36,7 +38,9 @@ router.post("/", urlencodedParser,function (req, res) {
             if (err) {
                 res.status(400).send(err);
             } else {
-                res.sendStatus(201);
+                res.status(201).json({
+                    "URI": "http://localhost:3000/api/items/" + this.lastID
+                });
             }
         })
 });

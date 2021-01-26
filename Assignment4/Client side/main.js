@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     const topSellingItemTable = $("#top_selling_items table");
     const topSellingItemForm = $("#add_top_selling_item");
 
@@ -38,37 +39,6 @@ $(document).ready(function () {
     }
 
 
-    // 2.RESET BUTTON
-    // $(".reset_database").click(function () {
-    //     $.ajax({
-    //         type: "get",
-    //         url: "https://wt.ops.labs.vu.nl/api21/e532098f/reset",
-    //         dataType: "json",
-    //         success: function (response) {
-    //             // DELETE EVERYTHING FROM TABLE
-    //             topSellingItemTable.find("tbody tr:not(:last-child)").slice(0).remove();
-    //             // ADD ITEMS FROM DB AFTER RESET
-    //             loadDataToTable();
-    //         }
-    //     });
-    // });
-
-
-    // 3.DYNAMIC TABLE CONTENT
-    // function loadDataToTable() {
-    //     $.ajax({
-    //         type: "get",
-    //         url: "https://wt.ops.labs.vu.nl/api21/e532098f",
-    //         data: "data",
-    //         dataType: "JSON",
-    //         success: function (response) {
-    //             for (let item in response) {
-    //                 topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
-    //             }
-    //         }
-    //     });
-    // }
-
     // Assignemnt 4
     // BONUS PART:
     // 1.LOADING DYNAMICLY TABLE CONTENT FROM LOCALHOST SERVER
@@ -80,11 +50,12 @@ $(document).ready(function () {
             dataType: "JSON",
             success: function (response) {
                 for (let item in response) {
-                    topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
+                    topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[item].image}" height="150"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td><td><button class="del" type="button">THIS</button></td> </tr>`)
                 }
             }
         });
     }
+
     // 2.RESET BUTTON
     $(".reset_database").click(function () {
         $.ajax({
@@ -124,16 +95,19 @@ $(document).ready(function () {
                     data: "data",
                     dataType: "JSON",
                     success: function (response) {
-                        topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response.image}" height="150"></td><td> ${response.product} </td><td> ${response.origin} </td><td> ${response.best_before_date} </td><td> ${response.amount} </td></tr>`)
+                        topSellingItemTable.find("tbody").prepend(`<tr><td><img src="${response[0].image}" height="150"></td><td> ${response[0].product} </td><td> ${response[0].origin} </td><td> ${response[0].best_before_date} </td><td> ${response[0].amount} </td> <td><button class="del" type="button">THIS</button></td> </tr>`)
                     }
                 });
             }
         });
     });
 
-    $(".del").click(function () {
-        console.log("delete triggered")
-    })
+    $("#top_selling_items table tbody td .del").click(function (e) {
+        e.preventDefault();
 
-    loadDataToTable()
+        console.log("something");
+    });
+
+    loadDataToTable();
+
 });
