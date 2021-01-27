@@ -412,6 +412,10 @@ footer dl dd {
     color: rgb(205, 205, 205);
 }
 
+.about_image {
+    display: none;
+}
+
 @media screen and (max-width: 1300px) {
     header nav {
         display: none;
