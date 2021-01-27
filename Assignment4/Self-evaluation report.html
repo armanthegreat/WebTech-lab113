@@ -4,205 +4,311 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Self-evaluation</title>
+    <style>
+        body{
+            padding: 2%;
+            background-color: white;
+            color: black;
+            font-size: medium;
+        }
+
+
+        h2{
+            text-decoration: underline;
+        }
+
+        li,td{
+            padding-bottom: 15px;
+        }
+
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,th{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+
+        th {
+            align-content: center;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table caption{
+            padding: 10px;
+        }
+
+        #A2{
+            padding-top: 30px;
+        }
+
+        hr{
+            border-color: white;
+            margin: 50px;
+        }
+
+        /* #Prioritized-list{
+            font-size: large;
+        } */
+
+
+
+
+    </style>
 </head>
 <body>
-    <h1>Assignment 4</h1>
-    <p>Our online store is a dynamic web page created to be easily used by multiple users on various devices. 
-        It presents the data to the user in a very coherent and user-friendly format. Starting from the top of the page; 
-        we included a navigation bar to assist the user to browse through the page and have a direct link to their desired 
-        part of the webpage. Going a little down we have added a very easy to use product catalog that shows the available 
-        products in the store in a very organized manner. Following that we have also added an interactive table that allows 
-        the customers to access and add new items to the table. We end the page with a short description of the store and its 
-        goals we have been striving towards. The page in general has a very uniform layout with a matching color-scheme and a 
-        clear paragraph layout where texts and images are smoothly laid out on the page.
-         // However, due to the timestarint and the basic knowledge we had some functionality didnt work as planned such as; 
-         the sorting functionality //
-    </p>
-    <p>From the list of guidelines on WCAG we identified 3 clear principales that we think clearly applies to our webpage they are:</p>
-    <ul>
-        <li>1.3 Adaptable: It is necessary for our page to be accessible for users on different screens as many shoppers will not be looking at the store from their computers so we made sure to keep a simple but elegant design for smaller screen sizes where it conveys the main information of the page to the users.</li>
-        <li>1.4 Distinguishable: It is crucial for us that our page is accessible by everyone so we have made sure that we didn't use any colors on our text and keep a good color contrast between the text and the background to make it visible even for people with disabilities.</li>
-        <li>2.4 Navigation: It is important for our page to be navigational to provide the most efficient and comfort to the users when they are trying to look for a specific section of the page. </li>
-    
-    </ul>
 
-    <table>
-        <thead>
-            <th>Guideline</th>
-            <th>Compliance </th>
-            <th>Description </th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1.1</td>
-                <td>Comply</td>
-                <td>1.1.1 Non-text Content Most of the content on our site is conveyed in a text form, with the exception of few images. However, the Guideline clearly states that there is exemption of the content that is used for “decoration” . As we have provided the image under the navigation bar that serves for such purposes, we have considered adding any additional explanation. However, for every other case of non-text content we have not also provided proper text alternatives for the situations listed in the guideline. (Level A)
-                </td>
-            </tr>
-            <tr>
-                <td>1.3</td>
-                <td>Partial compliance</td>
-                <td>1.3.1 Info and Relationships: Based on the “understanding” section of the guideline, it implies that information and relationships that are implied by visual or auditory formatting are preserved when the presentation format changes. Given the fact that we have used HTML structure only for semantics (not decoration or appearance), all content should retain its visual relationship in case of style sheet substitution. In terms of responsiveness of the content when viewed on a different screen, we have had some issues with media query at some screen size, and it was directly related to this guideline, as it disrupted the information and relationship between content. Overall, the structure and relationship of the content of our site did ensure that information important for comprehension will be perceivable to all. (Level A)
+    <section id="Intro">
+        <h1>Assignment 4</h1>
+        <h2 ><u>Introduction:</u></h2>
+        <p >First it is important to start off by saying that the biggest limitation is that both of us had no prior experience working in the web development domain. This means that all the technologies involved in the development of the site were unknown prior to the start of this course. As for accessibility and usability of the site we have built, there were many segments that we have thought about while developing and structuring the content. We have tried developing responsive designs that adapt to different screen sizes and print view, to improve the usability. Some of the limitations we encountered were that existing content required a new form of presentation when being perceived as responsive and adaptable. The page as a whole has a very uniform layout with a contrasting color-scheme and a clear paragraph layout where texts and images are smoothly laid out on the page. Although having no acquaintance with WCAG guidelines before this assignment, we have somewhat managed to comply with many guidelines. That is mainly due to the fact that there was active comparison of our work to existing sites providing similar services (eBay, Amazon). Although we have not integrated functionality to all existing elements (search bar, exploring products by categories) , we laid a foundation for further development.  </p>
+    </section> 
 
-                    1.3.2 Meaningful Sequence: As the guideline success criterion states, the intent is to enable a s user agent to provide an alternative presentation of content while preserving reading order needed to understand the meaning. This could translate to providing an adequate print view of the content, or creating responsive design for the cases when content is viewed on different screens. By analyzing the site we have built, we have provided a somewhat sufficient print and responsive interface. However, there was some TA feedback suggesting that we had some issues with the media queries in CSS, and those issues were related to preserving reading order needed to understand the meaning. The print view had issues with the placement of the “about us” section. (Level A)
-                    
-                    1.3.3 Sensory Characteristics:</td>
-            </tr>
-            <tr>
-                <td>1.4</td>
-                <td>Comply</td>
-                <td>1.4.1 Use of Color: As the guideline suggests, all information conveyed by using color (meaningfully) should have some form of alternative for the case where the user might not perceive color difference. In the case of our site, the use of colors heavily relies on the aesthetic of the site, thus there are no cases where particular meaningful information is provided using color differences. There is only a case where color change is triggered using CSS hover or focus effect indicating the use of a particular element of input form. For such cases we have not provided any alternative information, as it seems redundant. When it comes to text content, the colors are set to provide the contrast from the background, and therefore improve readability. 
+    <hr>    
 
+    <section id="Accessibility-Highlight">
+        <h2><u>Accessibility highlights section</u></h2>   
+        <p>The WCAG guidelines cover a wide range of instructions that focus on improving the overall user experience and providing higher accessibility to the Web content. Some of the guidelines that we have analyzed in the context of our website were related to:</p>
+        
+        <ul>
+            <li>accessibility from a different environment (adaptable for people that intend on viewing the content in a different form from the primary existing); </li>
+            <li>clear and meaningful structure and use of all additional methods of conveying information (with alternative to those that can view such additional methods);</li>
+            <li>Easy navigability through the site with higher focus and more direct access to the primary content of the site.</li>
+        </ul>
 
-                    1.4.2 Audio Control: This guideline is related to audio content, and as we do not have any we will omit it.</td>
-            </tr>
-            <tr>
-                <td>2.1</td>
-                <td>Partially </td>
-                <td>2.1.1 Keyboard:
+        <p>For analyzing applicability of all guidelines individually to the context of our site we have started first with checking if the specific guideline has significant relevance to the content of our site. So we have determined that the cases where the guidelines are related to audio content are not applicable to our site. Secondly, we identified the exact purpose of the guideline, and we have tried understanding if it matches the situations in which the content is used on our site.  
+            From the list of principles on WCAG we identified 3 clear guidelines that we think clearly apply to our webpage:</p>
+            
 
-                    As we only use simple HTML content, we have only relied on the browser's integrated keyboard accessibility. The site can be navigated using keyboard arrow keys, and all hyperlinks can be accessed using tab key. However, for any other content (table data, text paragraph, images) we haven’t provided any additional keyboard accessibility.
-                    
-                    We have not encountered any “keyboard traps” while navigating throughout the site using the keyboard interface.
-                    </td>
-            </tr>
-            <tr>
-                <td>2.4</td>
-                <td>Comply</td>
-                <td>2.4.1 - In the header of the page we have applied a couple of navigational links that would navigate to different parts of the page and allows the user to bypass chunks of content
+        <ul>
+            <li >1.3 Adaptable: It is necessary for our site to be accessible on different screens, user agents and environments for all users, as many shoppers will not navigate through the content of the store using both visual or aural presentation at the same time. This means that we need to provide a simpler layout for showing the products in different categories and occurrences, without losing any information or structure for the cases where users might use a screen reader. Furthermore, the content should preserve its structure when providing alternative presentation.
+                The improvement of accessibility followed by this guideline can reflect the interest of customers to learn and memorise the pattern of operations needed to successfully purchase products from our site.</li>
+            <li>1.4 Distinguishable: It is crucial for us that the content of our page is easy to handle without any constraints of using only color for conveying information. This guideline points to the idea that adapting the content not to be dependably on color can enable more users to find products (possibly purchase them) and therefore enlarge the customer base on our site. Furthermore, the color on our site is used only to improve the aesthetics. As previously stated, we have not integrated any audio content, thus the existence of audio control mechanism is not necessary.</li>
+            <li>2.4 Navigable: It is important for our page to be easily navigated, and provide the most efficient and comfort to the users when they are trying to look for a specific section of the page. All sections require proper title. Given the fact that the nature of our website is e-commerce, there might be cases where certain products are promoted or displayed as block elements appearing after the whole page loads, or simple advertisement methods. In such cases it is important not to overlook the users that will be viewing the site using different user agents. Including section titles and page titles can decrease the time needed for users to find specific products or view other relevant products.
+                For the case where new items are added to the top selling items table, the focus order plays an important role, since it enables navigating through input fields easily, without jumping to other sections of the page.</li> 
+        </ul>
+    </section> 
 
-                    2.4.2 - We have used the name of our webpage as our title it’s the most appropriate way of calling the webpage 
-                    
-                    2.4.3 - 
-                    
-                    2.4.4 - We have named every link that is in use by the user appropriately to direct the user appropriately with the least amount of confusion. 
-                    </td>
-            </tr>
-        </tbody>
-    </table>
-    <table>
-        <thead>
-            <th>Criteria</th>
-            <th>TA Feedback comments: </th>
-            <th>Feedback related to:</th>
-        </thead>
-        <br>
+    <hr>
+
+    <section id="Appendix-1">
         <h2>Appendix 1</h2>
-        <tbody>
-            <tr>
-                <td>HTML a: All items from Appendix 1</td>
-                <td>All attributes present and correctly used.</td>
-                <td>A positive aspect of your submission that improves usability or accessibility</td>
-            </tr>
-            <tr>
-                <td>HTML b: Interactive form</td>
-                <td>Correctly working form.</td>
-                <td>A positive aspect of your submission that improves usability or accessibility</td>
-            </tr>
-            <tr>
-                <td>HTML c: Validator check</td>
-                <td>No errors. Some warnings though, consider fixing them</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page </td>
-            </tr>
-            <tr>
-                <td>HTML d: Misc</td>
-                <td>Neath and structured HTML code.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>HTML e: Penalty for style and other bad markup</td>
-                <td>Images have style-oriented markup: height. This property belongs to the CSS file.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS a: All items from Appendix 2</td>
-                <td>Not all attributes present.
-                    - background-repeat
-                    - list-style-type
-                    - margin-right
-                    - vertical-align
-                    are missing.
+        <table>
+            <thead>
+                <th>Guideline</th>
+                <th>Compliance </th>
+                <th>Description </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.1</td>
+                    <td>Fails to comply</td>
+                    <td>1.1.1 <strong>Non-text Content: </strong>Most of the content on our site is conveyed in a text form, with the exception of few images. However, the guideline clearly states that there is exemption of the content that is used for “decoration”, and as we have provided the image under the navigation bar that serves for such purposes, it clearly has an exemption. However, for every other case of non-text content, the situation of products listed in tables, we have not provided sufficient text alternatives to images, as the products were dynamically generated by user input. Therefore we do not comply fully with this guideline.(Level A)                </td>
+                </tr>
+                <tr>
+                    <td>1.3</td>
+                    <td>Partial compliance</td>
+                    <td>1.3.1 <strong>Info and Relationships:</strong> Based on the “understanding” section of the guideline, it implies that information and relationships that are implied by visual or auditory formatting are preserved when the presentation format changes. Given the fact that we have used HTML structure only for semantics (not decoration or appearance), all content should retain its visual relationship in case of style sheet substitution. In terms of responsiveness of the content when viewed on a different screen, we have had some issues with media query at some screen size, and it was directly related to this guideline, as it disrupted the information and relationship between content. Overall, the structure and relationship of the content of our site did ensure that information important for comprehension will be perceivable to all. (Level A)<br>
+                        1.3.2 <strong>Meaningful Sequence: </strong>As the guideline “success criterion” states, the intent is to provide an alternative presentation of content while preserving reading order needed to understand the meaning. This could translate to providing an adequate print view of the content, or creating responsive design for the cases when content is viewed on different screens. By analyzing the site we have built, we have provided a somewhat sufficient print and responsive interface. However, there was some TA feedback suggesting that we had some issues with the media queries in CSS, and those issues were related to preserving reading order needed to understand the meaning. The print view had issues with the placement and viewing of the “about us” section. (Level A)<br>
+                        1.3.3 <strong> Sensory Characteristics:</strong>This guideline is related to any content that uses shape, size, spatial location or orientations (or any other visual cue) for navigation and the use of the website. Such content needs to have adequate text alternatives or information explaining the actions. As for our site, there is no content that uses any of the above mentioned attributes for accessibility purposes. Therefore we do comply with this part of the guideline.<br>
+                    </td>         
+                </tr>
+                <tr>
+                    <td>1.4</td>
+                    <td>Comply</td>
+                    <td>1.4.1 <strong>Use of Color:</strong> As the guideline suggests, all information conveyed by using color (meaningfully) should have some form of alternative for the case where the user might not perceive color difference. In the case of our site, the use of colors heavily relies on the aesthetic of the site, thus there are no cases where particular meaningful information is provided only using color differences. There is only a case where color change is triggered using CSS hover or focus effect indicating the use of a particular element or input form. For such cases we have not provided any alternative information as it seems redundant. When it comes to paragraph sections, the colors are set to provide the contrast from the background, and therefore improve readability. (Level A)<br>
+                        1.4.2 <strong>Audio Control:</strong> This guideline is related to audio content, and as we do not have any it is not applicable. (Level A)
                     </td>
-                <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS b: print style</td>
-                <td>Good try to generate your website for paged devices. However I can spot some problems:
-                    1) Employees Contact Info has a very light font colour for a printable document
-                    2) The about us should have been placed on page 2 (not a proper page break).
-                    3) The first page seems to be a little bit sloppy regarding the font sizes.
-                    </td>
-                <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS c: screen style</td>
-                <td>Screen and print styles are sufficiently different</td>
-                <td>A positive aspect of your submission that improves usability or accessibility</td>
-            </tr>
-            <tr>
-                <td>CSS d: Responsive design</td>
-                <td>For me the website is not responsive for mobiles and some other (weirds) things happen with some screen sizes. This is contradicting your report, so we can talk about it in our lab session.</td>
-                <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS e: browser compatibility report</td>
-                <td>Present. Shows problems and how to overcome some of them.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS f: Misc</td>
-                <td>Neat and structured CSS code.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>CSS g: validator check</td>
-                <td>No errors or warnings.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-        </tbody>
-    </table>
-    <h2>Appendix 2</h2>
-    <table>
-        <thead>
-            <th>Criteria</th>
-            <th>TA Feedback comments: </th>
-            <th>Feedback related to:</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Sortable tables</td>
-                <td>Sorting the input row along with the data rows (-5pt)</td>
-                <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>Reset button</td>
-                <td>The reset does not work correctly after sorting (-3pt)</td>
-                <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
-            </tr>
-            <tr>
-                <td>Dynamic table</td>
-                <td>Everything in order</td>
-                <td>A positive aspect of your submission that improves usability or accessibility</td>
-            </tr>
-            <tr>
-                <td>Single page form submit</td>
-                <td>-2: Using .serialize() will cause the form data to be encoded in the POST URL. With this method, the data is *not* posted to the server in JSON format.</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your page
-                    (But could reflect on usability and accessibility)
-                    </td>
-            </tr>
-            <tr>
-                <td>Misc.</td>
-                <td>Everything looks okay! Good job!</td>
-                <td>A technical implementation detail that has no impact on the usability or accessibility of your pageA technical implementation detail that has no impact on the usability or accessibility of your page</td>
-            </tr>
-        </tbody>
-    </table>
-    <pre style="font-size: large;">
-Improvement plan :
-    Our approach to improvements is based on assessing the site as a whole and understanding which of its components are affecting the usability and accessibility. 
-    As we have analyzed the WCAG guidelines and the TA feedback, we came to an idea of devising a list ordered by prioritization.
+                </tr>
+                <tr>
+                    <td>2.1</td>
+                    <td>Partially </td>
+                    <td>2.1.1<strong> Keyboard:</strong> The intent of this guideline is to ensure that all content can be operated through the keyboard or keyboard interface. As we have only used simple HTML content (without any interactive graphics, integrated web application), we have relied on the browser's integrated keyboard accessibility. The site can be navigated using keyboard arrow keys, and all hyperlinks can be accessed using tab key and (shift + tab keys). (Level A)<br>
+                        2.1.2 <strong>No Keyboard Trap:</strong> The guideline explanations suggest that keyboard traps are a common problem when multiple formats are combined within a page and rendered using plug-ins or embedded applications. As previously stated in the guideline above, the contents of our site are HTML elements, and thus we have not encountered any “keyboard traps” while navigating throughout the site using the keyboard interface. (Level A)
 
-    </pre>
+                    </td>                  
+                </tr>
+                <tr>
+                    <td>2.4</td>
+                    <td>Comply</td>
+                    <td>2.4.1 <strong>Bypass Blocks:</strong> The intent of this guideline is to allow users more direct access to the primary content of the web page, by bypassing blocks of content that are repeated on multiple web pages. From the context of the guideline, types of such content could be advertisements, additional screens or block elements that are not related to the primary content. Given the fact that we do not have any non-related or repeating content we can consider saying that we comply or the guideline is not applicable to our site.<br>
+                        2.4.2 <strong>Page Titled:</strong> This guideline ensures that the users are able to find content and orient themselves within the site by requiring descriptive titles for the content. By having the HTML title, navigation bar, and heading for every section of our site we fully comply with this guideline.<br>
+                        2.4.3 <strong>Focus Order:</strong> The success criterion for this guideline ensures that navigation through site is consistent with the meaning of the content and can be operated from the keyboard. By analyzing the navigation on our site with a keyboard interface, we have noticed that the navigation follows sequential navigation. To further illustrate, the movement from the top of the page to the button using tab key does not skip any links that are present, and follows an ordered pattern. However, the movement through “explore popular products by categories” follows the HTML order, meaning that it jumps to the second column after finishing the list items from the first. When it comes to input form for adding new items to the table, every input field is triggered following the visible pattern.<br>
+                        2.4.4 <strong>Link Purpose (In Context):</strong> Based on the guideline explanation, every hyperlink should be understandable, allowing users to decide whether they want to navigate to it. We have provided clear meaning, purpose and destination for every hyperlink present on our site, thus there are no unclear actions behind pressing any link element. Thus we comply with this part of the guideline.<br>  
+                    </td>                  
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="Appendix-2">
+        <h2>Appendix 2</h2>
+        
+        <table>
+            <thead>
+                <caption><strong>Assignment 1</strong></caption>
+                <th>Criteria</th>
+                <th>TA Feedback comments: </th>
+                <th>Feedback related to:</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML a: All items from Appendix 1</td>
+                    <td>All attributes present and correctly used.</td>
+                    <td>A positive aspect of your submission that improves usability or accessibility</td>
+                </tr>
+                <tr>
+                    <td>HTML b: Interactive form</td>
+                    <td>Correctly working form.</td>
+                    <td>A positive aspect of your submission that improves usability or accessibility</td>
+                </tr>
+                <tr>
+                    <td>HTML c: Validator check</td>
+                    <td>No errors. Some warnings though, consider fixing them</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page </td>
+                </tr>
+                <tr>
+                    <td>HTML d: Misc</td>
+                    <td>Neath and structured HTML code.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>HTML e: Penalty for style and other bad markup</td>
+                    <td>Images have style-oriented markup: height. This property belongs to the CSS file.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS a: All items from Appendix 2</td>
+                    <td>Not all attributes present.<br>
+                        - background-repeat<br>
+                        - list-style-type<br>
+                        - margin-right<br>
+                        - vertical-align<br>
+                        are missing.<br>
+                        </td>
+                    <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS b: print style</td>
+                    <td>Good try to generate your website for paged devices. However I can spot some problems:<br>
+                        1) Employees Contact Info has a very light font colour for a printable document<br>
+                        2) The about us should have been placed on page 2 (not a proper page break).<br>
+                        3) The first page seems to be a little bit sloppy regarding the font sizes.<br>
+                        </td>
+                    <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS c: screen style</td>
+                    <td>Screen and print styles are sufficiently different</td>
+                    <td>A positive aspect of your submission that improves usability or accessibility</td>
+                </tr>
+                <tr>
+                    <td>CSS d: Responsive design</td>
+                    <td>For me the website is not responsive for mobiles and some other (weirds) things happen with <br>
+                        some screen sizes. This is contradicting your report, so we can talk about it in our lab session.</td>
+                    <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS e: browser compatibility report</td>
+                    <td>Present. Shows problems and how to overcome some of them.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS f: Misc</td>
+                    <td>Neat and structured CSS code.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>CSS g: validator check</td>
+                    <td>No errors or warnings.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <caption  id="A2"><strong>Assignment 1</strong></caption>
+                <th>Criteria</th>
+                <th>TA Feedback comments: </th>
+                <th>Feedback related to:</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sortable tables</td>
+                    <td>Sorting the input row along with the data rows</td>
+                    <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>Reset button</td>
+                    <td>The reset does not work correctly after sorting </td>
+                    <td>A potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page</td>
+                </tr>
+                <tr>
+                    <td>Dynamic table</td>
+                    <td>Everything in order</td>
+                    <td>A positive aspect of your submission that improves usability or accessibility</td>
+                </tr>
+                <tr>
+                    <td>Single page form submit</td>
+                    <td>Using .serialize() will cause the form data to be encoded in the POST URL. With this method, the data is *not* posted to the server in JSON format.</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your page
+                        (But could reflect on usability and accessibility)
+                        </td>
+                </tr>
+                <tr>
+                    <td>Misc.</td>
+                    <td>Everything looks okay! Good job!</td>
+                    <td>A technical implementation detail that has no impact on the usability or accessibility of your pageA technical implementation detail that has no impact on the usability or accessibility of your page</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <section id="Improvemnet-Plan">
+        <h2>Improvement plan</h2>
+        <p>
+        Our approach to improvements is based on assessing the site as a whole and understanding which of its components are affecting the usability and accessibility of the site. As we have analyzed the WCAG guidelines and the TA feedback, we came to an idea of devising a list of issues organized by the source of the information. Afterward we worked on creating a list with prioritized improvements and execution plans, where every element of the list addresses all issues specified in Appendixes A and B. 
+        Starting from Appendix A, the guidelines that we have failed to comply with are directly related to the responsiveness, alternative view of the site and preserving the structure of the site while being presented in alternative viewing modes.
+        </p>
+
+        <ul>
+            <li>Firstly, there was a particular non-compliance issue related to providing alternative text description for non-text elements. This was caused by the fact that images presented in the “Top selling item” table were dynamically generated from the database, and the HTML “alt” (image alternative) attribute has been overlooked while developing the Javascript function that rendered new items to the table.  </li>
+            <li>We haven’t also managed to retain the meaningful structure by creating a responsive design that adapts to all screens sizes. By inspecting clearly the style sheet (CSS) we identified the problem with the table, where table data does not resize appropriately and causes elements on the site to collide. </li>
+            <li>Final issue with guideline compliance was a print view, where the structure and presentation of the document was out of proportion and also the coloring of the text once in print view was not appropriate.</li>
+        </ul>
+
+        <p>
+        Moving to Appendix B, some of the improvement suggestions were related to technical implementation, that does not directly correlate with usability of accessibility aspects of the site. Cases of such feedback were using style-oriented markup in Javascript, not utilizing all CSS attributes (or using shorthand versions). However, there were many comments related to “a potentially negative aspect of your submission that could be used to improve the usability or accessibility of your page”. Such situations were responsiveness and print view of the page, and also to dynamical functionality like sorting and resetting products in table.
+        Prioritized list of improvements with plan
+        </p>
+    </section>
+
+    <hr>
+
+    <section id="Prioritized-list">
+        <h2>Prioritized list of improvements with plan</h2>
+        <ol>
+            <li>The first aspect of the site that we are planning to work on and improve is to make the page responsive to all screen sizes and fix the. The execution plan starts with locating the element on the page that causes the problem. We will start with inspecting HTML elements individually by changing “display” property to “none” and seeing if it makes any changes to the document. This will cause a situation where certain elements will not be rendered in the browser, and will allow us to identify particular elements that cause the site to break at certain screen sizes. After finding the particular element that causes the problem, we will try to apply relative units to text or image content for a certain media query. This will cause resizing of the content to fit all views. By fixing these issues we directly address guidelines … and TA  feedback ... </li>
+            <li>Second improvement is related to the print view. The current version of the site has issues with the placement of the content and font styling. We will first start with analyzing the style sheet section related to the print view. As the first problem is with the placement of the “about us” section, we will try to position it to the second page and create a proper page break. Next we will try fixing the font styling by applying the uniform color to all the text and improving font sizes on the first page so that it improves readability of the document. By fixing this issue we directly address the guideline … and TA feedback …</li>
+            <li>Third point for improvement is fixing issues with sorting functionality of the table that loads data dynamically from the HTTP response body. We will first start with examining the both function that deals with sorting and function that converts JSON response and deals with rendering it to the table. The suspected issue might be in loading the data from response to the table, as it replaces HTML tbody element with the response converted into HTML elements respectively. We will try to confirm this by user developer tools in our browser and analyze the outcome of both actions (sorting and resetting) By fixing these issues we directly improve the usability of the site and address guidelines … and TA feedback …</li>
+            <li>So far all improvements were related to usability and accessibility, this next improvement addresses an issue that might not directly be related to above mentioned, but still plays an important role in functionality of the website. The issue is related to using the “serialize()” method on POST request. This causes the request body to be encoded in URI. We will start first by observing the information provided by the input form. There should be an object containing all the values that the user passes in. After identifying such an object we will try to extract the submitted values (from text input) and we might create a new additional object to which we will assign all key-value pairs that are relevant to the required form of the request. So in the end we will have a new object where all the input text was assigned to the corresponding key ({“item” :” “apple”}). The final stage would be passing this object to the POST request function and possibly using “JSON.stringify” method on the object, to convert all the content to appropriate format for the request. </li>
+            <li>As the final stage of our improvement we will try doing the bonus part, integrating our localhost server into the client side application. First step would be changing all URI endpoints to “http://localhost:3000/api/items”. Since not all “CRUD” operations were performed in the previous assignment, we might want to think of an appropriate way for handling all operations from the client side interface. This will require creating buttons in HTML for every element in the table, enabling removal of that specific element. Next issue could be dealing with updating the product, where we might address it by changing the content of the table data to text input when a certain table cell is clicked. And might finalize everything with deploying localhost server and testing all the functionality from the client side app. </li>
+        </ol>
+    </section>
 </body>
 </html>
