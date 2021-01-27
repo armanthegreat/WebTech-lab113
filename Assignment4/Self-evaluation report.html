@@ -452,26 +452,35 @@
                 that cause the site to break at certain screen sizes. After finding the particular element that causes
                 the problem, we will try to apply relative units to text or image content for a certain media query.
                 This will cause resizing of the content to fit all views. By fixing these issues we directly address
-                guidelines … and TA feedback ... </li>
+                guidelines 1.3 and TA feedback regarding responsive design </li>
             <li>Second improvement is related to the print view. The current version of the site has issues with the
                 placement of the content and font styling. We will first start with analyzing the style sheet section
                 related to the print view. As the first problem is with the placement of the “about us” section, we will
                 try to position it to the second page and create a proper page break. Next we will try fixing the font
                 styling by applying the uniform color to all the text and improving font sizes on the first page so that
-                it improves readability of the document. By fixing this issue we directly address the guideline … and TA
-                feedback …</li>
-            <li>Third point for improvement is fixing issues with sorting functionality of the table that loads data
+                it improves readability of the document. By fixing this issue we directly address the guideline 1.3 and
+                TA
+                feedback regarding the print style</li>
+            <li>
+                Third point for improvment is adding providing the alternative text description for non-text elements.
+                This is related to the images of items in "Top Selling Items" table. All images were generated
+                dynamically (using Javascript) and therefore we have overlook adding "alt" attributes to the "img"
+                elements. The solution would be simply to identify the line were content is dynamically added from the
+                server response, and to add appropriate "alt" text. We will perform that by adding product name to "alt"
+                and concatenate with string "image".
+            </li>
+            <li>Fourth point for improvement is fixing issues with sorting functionality of the table that loads data
                 dynamically from the HTTP response body. We will first start with examining the both function that deals
-                with sorting and function that converts JSON response and deals with rendering it to the table. The
-                suspected issue might be in loading the data from response to the table, as it replaces HTML tbody
+                with sorting and function that converts the JSON response and deals with rendering it to the table. The
+                suspected issue might be in loading the data from the response to the table, as it replaces HTML tbody
                 element with the response converted into HTML elements respectively. We will try to confirm this by user
                 developer tools in our browser and analyze the outcome of both actions (sorting and resetting) By fixing
                 these issues we directly improve the usability of the site and address guidelines … and TA feedback …
             </li>
             <li>So far all improvements were related to usability and accessibility, this next improvement addresses an
-                issue that might not directly be related to above mentioned, but still plays an important role in
+                issue that might not directly be related to the above mentioned, but still plays an important role in
                 functionality of the website. The issue is related to using the “serialize()” method on POST request.
-                This causes the request body to be encoded in URI. We will start first by observing the information
+                This causes the request body to be encoded in the URI. We will start first by observing the information
                 provided by the input form. There should be an object containing all the values that the user passes in.
                 After identifying such an object we will try to extract the submitted values (from text input) and we
                 might create a new additional object to which we will assign all key-value pairs that are relevant to

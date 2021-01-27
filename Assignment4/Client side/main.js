@@ -50,7 +50,7 @@ $(document).ready(function () {
             dataType: "JSON",
             success: function (response) {
                 for (let item in response) {
-                    topSellingItemTable.find("tbody").prepend(`<tr><td><img class="productImage" src="${response[item].image}"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td><td><button class="del" type="button">THIS</button></td> </tr>`)
+                    topSellingItemTable.find("tbody").prepend(`<tr><td><img alt="${response[item].product} image" class="productImage" src="${response[item].image}"></td><td> ${response[item].product} </td><td> ${response[item].origin} </td><td> ${response[item].best_before_date} </td><td> ${response[item].amount} </td></tr>`)
                 }
             }
         });
@@ -95,7 +95,7 @@ $(document).ready(function () {
                     data: "data",
                     dataType: "JSON",
                     success: function (response) {
-                        topSellingItemTable.find("tbody").prepend(`<tr><td><img class="productImage" src="${response[0].image}"></td><td> ${response[0].product} </td><td> ${response[0].origin} </td><td> ${response[0].best_before_date} </td><td> ${response[0].amount} </td> <td><input type="submit" class="del"></td> </tr>`)
+                        topSellingItemTable.find("tbody").prepend(`<tr><td><img alt="${response[0].product} image" class="productImage" src="${response[0].image}"></td><td> ${response[0].product} </td><td> ${response[0].origin} </td><td> ${response[0].best_before_date} </td><td> ${response[0].amount} </td></tr>`)
                     }
                 });
             }
