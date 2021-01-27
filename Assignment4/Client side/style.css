@@ -93,9 +93,7 @@ h2 {
     font-family: "Lato", sans-serif;
 }
 
-/* FIX UP */
 
-/* LAST ADDED, NEEDS TO BE FITTED WITH JS TO STYLE IMAGES IN "TOP SELLING ITEMS TABLE" */
 .top_selling_items_image {
     height: 150;
 }
@@ -435,10 +433,6 @@ footer dl dd {
         font-size: 4vw;
     }
 
-    #products_categories h3 {
-        font-size: 40px;
-    }
-
     #products_categories ul {
         columns: 2;
         font-size: 35px;
@@ -469,22 +463,73 @@ footer dl dd {
         display: none;
     }
 
-    .products_categories h3 {
-        font-size: 1vw;
-    }
-
     #top_selling_items table td:first-child {
         display: none;
     }
 
+    #top_selling_items table thead tr th:first-child {
+        display: none;
+    }
+
+    * {
+        font-size: 20px;
+    }
+
+    header {
+        display: none;
+    }
+
+    table, thead, tbody, th, td, tr { 
+		display: block; 
+    }
+    
+    #top_selling_items table {
+        width: 80%;
+        text-align: center;
+        caption-side: top;
+        margin-top: 50px;
+        font-size: 5px outline;
+    }
+
+    .recently_added_products {
+        width: 80%;
+        font-size: 5px;
+    }
+
+    footer {
+        display: none;
+    }
+
+    img {
+        height: 40px;
+    }
+
+    main {
+        width: 100%;
+        display: block;
+    }
+
+    .welcome_heading {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    * {
+        font-size: 10px;
+    }
+
+    main {
+        width: 100%;
+    }
 }
 
 @media print {
 
     * {
         font-family: Georgia, sans-serif;
-        color: black;
-        
+        color: black;   
     }
 
     nav {
