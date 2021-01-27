@@ -484,11 +484,13 @@ footer dl dd {
     * {
         font-family: Georgia, sans-serif;
         color: black;
+        
     }
 
     nav {
         display: none
     }
+
 
     p {
         widows: 3;
@@ -501,15 +503,15 @@ footer dl dd {
     }
 
     .welcome_heading {
-        font-size: 50px;
+        font-size: 40px;
         color: black;
         text-shadow: none;
-        margin: 0 20px;
+        margin: 0px;
+        padding: 0px;
     }
 
     #products_categories {
         display: none;
-        width: 50%;
     }
 
     #top_selling_items table {
@@ -533,6 +535,8 @@ footer dl dd {
         width: 800px;
         page-break-after: always;
         page-break-inside: avoid;
+        margin-top: 50px;
+        padding-top: 0px;
     }
 
     #about_us {
@@ -540,7 +544,17 @@ footer dl dd {
         page-break-inside: avoid;
     }
 
-    .after_products_categories_line {
+    .company_priorities{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .top_sold_brands{
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .line {
         display: none
     }
 
@@ -549,6 +563,23 @@ footer dl dd {
     }
 
     footer {
-        page-break-before: always;
+        margin-top: 5px;
+        padding-top: 5px;
+    }
+
+    footer .container h3 {
+        color: black;
+    }
+
+    .contact .info li a:link {
+        color: black;
+    }
+    
+    .contact .info pre {
+        color: black;
+    }
+
+    .copyright{
+        display: none;
     }
 }
