@@ -249,6 +249,10 @@ table thead {
     margin-bottom: 100px;
 }
 
+.productImage {
+    height: 150px;
+}
+
 .recently_added_products {
     width: 1000px;
     text-align: center;
