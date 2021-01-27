@@ -102,8 +102,5 @@ $(document).ready(function () {
         });
     });
 
-   
-
     loadDataToTable();
-
 });
